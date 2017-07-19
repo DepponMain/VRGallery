@@ -1,0 +1,389 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1CA7A9A05CE36DDDB9612C9C /* libPods-VR_Gallery.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9A8A98313CE426FEDB01065 /* libPods-VR_Gallery.a */; };
+		5C1B22871F1F4BB700FACE64 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B22861F1F4BB700FACE64 /* main.m */; };
+		5C1B22921F1F4BB700FACE64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C1B22911F1F4BB700FACE64 /* Assets.xcassets */; };
+		5C1B22951F1F4BB700FACE64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C1B22931F1F4BB700FACE64 /* LaunchScreen.storyboard */; };
+		5C1B229F1F1F4C0B00FACE64 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B229E1F1F4C0B00FACE64 /* AppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		57B1A1C7953545B4140C9E15 /* Pods-VR_Gallery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VR_Gallery.release.xcconfig"; path = "Pods/Target Support Files/Pods-VR_Gallery/Pods-VR_Gallery.release.xcconfig"; sourceTree = "<group>"; };
+		5C1B22821F1F4BB700FACE64 /* VR_Gallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VR_Gallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C1B22861F1F4BB700FACE64 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5C1B22911F1F4BB700FACE64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5C1B22941F1F4BB700FACE64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5C1B22961F1F4BB700FACE64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C1B229D1F1F4C0B00FACE64 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5C1B229E1F1F4C0B00FACE64 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E9A8A98313CE426FEDB01065 /* libPods-VR_Gallery.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VR_Gallery.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F205431E903014D09100CD0E /* Pods-VR_Gallery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VR_Gallery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VR_Gallery/Pods-VR_Gallery.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5C1B227F1F1F4BB700FACE64 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CA7A9A05CE36DDDB9612C9C /* libPods-VR_Gallery.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5C1B22791F1F4BB700FACE64 = {
+			isa = PBXGroup;
+			children = (
+				5C1B22841F1F4BB700FACE64 /* VR_Gallery */,
+				5C1B22831F1F4BB700FACE64 /* Products */,
+				8C7ADDC1275EE367D1AE2EC4 /* Pods */,
+				EA75F6973A6AD05A2D2A5CE9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5C1B22831F1F4BB700FACE64 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5C1B22821F1F4BB700FACE64 /* VR_Gallery.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5C1B22841F1F4BB700FACE64 /* VR_Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				5C1B229C1F1F4C0B00FACE64 /* Application */,
+				5C1B22851F1F4BB700FACE64 /* Supporting Files */,
+			);
+			path = VR_Gallery;
+			sourceTree = "<group>";
+		};
+		5C1B22851F1F4BB700FACE64 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5C1B22911F1F4BB700FACE64 /* Assets.xcassets */,
+				5C1B22931F1F4BB700FACE64 /* LaunchScreen.storyboard */,
+				5C1B22961F1F4BB700FACE64 /* Info.plist */,
+				5C1B22861F1F4BB700FACE64 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5C1B229C1F1F4C0B00FACE64 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				5C1B229D1F1F4C0B00FACE64 /* AppDelegate.h */,
+				5C1B229E1F1F4C0B00FACE64 /* AppDelegate.m */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		8C7ADDC1275EE367D1AE2EC4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F205431E903014D09100CD0E /* Pods-VR_Gallery.debug.xcconfig */,
+				57B1A1C7953545B4140C9E15 /* Pods-VR_Gallery.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EA75F6973A6AD05A2D2A5CE9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9A8A98313CE426FEDB01065 /* libPods-VR_Gallery.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5C1B22811F1F4BB700FACE64 /* VR_Gallery */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C1B22991F1F4BB700FACE64 /* Build configuration list for PBXNativeTarget "VR_Gallery" */;
+			buildPhases = (
+				A9B668433E9820A9C27FB7C7 /* [CP] Check Pods Manifest.lock */,
+				5C1B227E1F1F4BB700FACE64 /* Sources */,
+				5C1B227F1F1F4BB700FACE64 /* Frameworks */,
+				5C1B22801F1F4BB700FACE64 /* Resources */,
+				91C921D601BA96E7CA571FDA /* [CP] Embed Pods Frameworks */,
+				392B9D71AC40C5CFFA0F0F80 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VR_Gallery;
+			productName = VR_Gallery;
+			productReference = 5C1B22821F1F4BB700FACE64 /* VR_Gallery.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5C1B227A1F1F4BB700FACE64 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = HJ;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = haiJiang;
+				TargetAttributes = {
+					5C1B22811F1F4BB700FACE64 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = RG5N2563HN;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 5C1B227D1F1F4BB700FACE64 /* Build configuration list for PBXProject "VR_Gallery" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5C1B22791F1F4BB700FACE64;
+			productRefGroup = 5C1B22831F1F4BB700FACE64 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5C1B22811F1F4BB700FACE64 /* VR_Gallery */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5C1B22801F1F4BB700FACE64 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C1B22951F1F4BB700FACE64 /* LaunchScreen.storyboard in Resources */,
+				5C1B22921F1F4BB700FACE64 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		392B9D71AC40C5CFFA0F0F80 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VR_Gallery/Pods-VR_Gallery-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91C921D601BA96E7CA571FDA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VR_Gallery/Pods-VR_Gallery-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A9B668433E9820A9C27FB7C7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5C1B227E1F1F4BB700FACE64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C1B22871F1F4BB700FACE64 /* main.m in Sources */,
+				5C1B229F1F1F4C0B00FACE64 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5C1B22931F1F4BB700FACE64 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C1B22941F1F4BB700FACE64 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5C1B22971F1F4BB700FACE64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5C1B22981F1F4BB700FACE64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5C1B229A1F1F4BB700FACE64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F205431E903014D09100CD0E /* Pods-VR_Gallery.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = RG5N2563HN;
+				INFOPLIST_FILE = VR_Gallery/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.haiJiang.VR-Gallery";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5C1B229B1F1F4BB700FACE64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57B1A1C7953545B4140C9E15 /* Pods-VR_Gallery.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = RG5N2563HN;
+				INFOPLIST_FILE = VR_Gallery/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.haiJiang.VR-Gallery";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5C1B227D1F1F4BB700FACE64 /* Build configuration list for PBXProject "VR_Gallery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C1B22971F1F4BB700FACE64 /* Debug */,
+				5C1B22981F1F4BB700FACE64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C1B22991F1F4BB700FACE64 /* Build configuration list for PBXNativeTarget "VR_Gallery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C1B229A1F1F4BB700FACE64 /* Debug */,
+				5C1B229B1F1F4BB700FACE64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5C1B227A1F1F4BB700FACE64 /* Project object */;
+}
