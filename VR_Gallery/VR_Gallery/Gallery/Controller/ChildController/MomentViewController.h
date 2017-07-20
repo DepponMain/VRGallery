@@ -8,20 +8,20 @@
 
 #import "BaseViewController.h"
 
-//typedef void(^selectImagesCount)(NSInteger count);
+typedef void(^selectImagesCount)(NSInteger count);
 
 @interface MomentViewController : BaseViewController
 
-//@property (nonatomic, copy)selectImagesCount block;
-//
-//- (void)selectBtnClick;
-//
-//- (void)cancleBtnClick;
-//
-//- (void)selectAllBtnClick;
-//
-//- (void)deselectAllBtnClick;
-//
-//- (void)deleteBtnClick;
+@property (nonatomic, copy)selectImagesCount block;
+
+- (void)selectBtnClick;
+
+- (void)cancleBtnClick;
+
+- (void)selectAllBtnClick;
+
+- (void)deselectAllBtnClick;
+
+- (void)deleteBtnClick;
 
 @end

@@ -30,25 +30,25 @@
     [self performSegueWithIdentifier:self.currentSegueIdentifier sender:nil];
 }
 
-//- (void)selectBtnClick{
-//    [self.momentController selectBtnClick];
-//    __weak ContainerViewController *weakSelf = self;
-//    self.momentController.block = ^(NSInteger count){
-//        weakSelf.block(count);
-//    };
-//}
-//- (void)cancleBtnClick{
-//    [self.momentController cancleBtnClick];
-//}
-//- (void)selectAllBtnClick{
-//    [self.momentController selectAllBtnClick];
-//}
-//- (void)deselectAllBtnClick{
-//    [self.momentController deselectAllBtnClick];
-//}
-//- (void)deleteBtnClick{
-//    [self.momentController deleteBtnClick];
-//}
+- (void)selectBtnClick{
+    [self.momentController selectBtnClick];
+    __weak ContainerViewController *weakSelf = self;
+    self.momentController.block = ^(NSInteger count){
+        weakSelf.block(count);
+    };
+}
+- (void)cancleBtnClick{
+    [self.momentController cancleBtnClick];
+}
+- (void)selectAllBtnClick{
+    [self.momentController selectAllBtnClick];
+}
+- (void)deselectAllBtnClick{
+    [self.momentController deselectAllBtnClick];
+}
+- (void)deleteBtnClick{
+    [self.momentController deleteBtnClick];
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     // Instead of creating new VCs on each seque we want to hang on to existing

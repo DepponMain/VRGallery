@@ -43,6 +43,7 @@
 		5C1B230C1F207CC400FACE64 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B230B1F207CC400FACE64 /* ContainerViewController.m */; };
 		5C1B230F1F207CEF00FACE64 /* MomentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B230E1F207CEF00FACE64 /* MomentViewController.m */; };
 		5C1B23121F207CF900FACE64 /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B23111F207CF900FACE64 /* AlbumViewController.m */; };
+		5C1B23171F2097C500FACE64 /* SelectFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B23161F2097C500FACE64 /* SelectFooterView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +120,8 @@
 		5C1B230E1F207CEF00FACE64 /* MomentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MomentViewController.m; sourceTree = "<group>"; };
 		5C1B23101F207CF900FACE64 /* AlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumViewController.h; sourceTree = "<group>"; };
 		5C1B23111F207CF900FACE64 /* AlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumViewController.m; sourceTree = "<group>"; };
+		5C1B23151F2097C500FACE64 /* SelectFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectFooterView.h; sourceTree = "<group>"; };
+		5C1B23161F2097C500FACE64 /* SelectFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectFooterView.m; sourceTree = "<group>"; };
 		E9A8A98313CE426FEDB01065 /* libPods-VR_Gallery.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VR_Gallery.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F205431E903014D09100CD0E /* Pods-VR_Gallery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VR_Gallery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VR_Gallery/Pods-VR_Gallery.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -348,6 +351,8 @@
 			children = (
 				5C1B22DD1F2051A400FACE64 /* EmptySegue.h */,
 				5C1B22DE1F2051A400FACE64 /* EmptySegue.m */,
+				5C1B23151F2097C500FACE64 /* SelectFooterView.h */,
+				5C1B23161F2097C500FACE64 /* SelectFooterView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -527,6 +532,7 @@
 				5C1B229F1F1F4C0B00FACE64 /* AppDelegate.m in Sources */,
 				5C1B22EB1F2059CE00FACE64 /* ImageDataAPI.m in Sources */,
 				5C1B23031F205EFD00FACE64 /* AlbumDataSource.m in Sources */,
+				5C1B23171F2097C500FACE64 /* SelectFooterView.m in Sources */,
 				5C1B22C61F204B1F00FACE64 /* MWPhoto.m in Sources */,
 				5C1B22C21F204B1F00FACE64 /* DALabeledCircularProgressView.m in Sources */,
 				5C1B230F1F207CEF00FACE64 /* MomentViewController.m in Sources */,

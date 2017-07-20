@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-//typedef void(^selectImagesCount)(NSInteger count);
+typedef void(^selectImagesCount)(NSInteger count);
 
 #define SegueIdentifierMoment @"embedMoment"
 #define SegueIdentifierAlbum  @"embedAlbum"
@@ -17,16 +17,16 @@
 
 - (BOOL)swapToViewControllerWithSigueID:(NSString *)ID;
 
-//@property (nonatomic, copy)selectImagesCount block;
-//
-//- (void)selectBtnClick;
-//
-//- (void)cancleBtnClick;
-//
-//- (void)selectAllBtnClick;
-//
-//- (void)deselectAllBtnClick;
-//
-//- (void)deleteBtnClick;
+@property (nonatomic, copy)selectImagesCount block;
+
+- (void)selectBtnClick;
+
+- (void)cancleBtnClick;
+
+- (void)selectAllBtnClick;
+
+- (void)deselectAllBtnClick;
+
+- (void)deleteBtnClick;
 
 @end

@@ -9,6 +9,7 @@
 
 #import "GalleryViewController.h"
 #import "ContainerViewController.h"
+#import "SelectFooterView.h"
 
 @interface GalleryViewController ()
 
@@ -17,6 +18,7 @@
 @property (nonatomic, strong) UIBarButtonItem *leftBarButtonItem;
 @property (nonatomic, strong) UIBarButtonItem *rightBarButtonItem;
 
+@property (nonatomic, weak) SelectFooterView *selectFooter;
 
 @end
 
@@ -37,11 +39,12 @@
 - (void)leftBarButtonItemClick:(UIBarButtonItem *)sender{
     if ([sender.title isEqualToString:@"取消"]) {
         [self.rightBarButtonItem setTitle:@"选择"];
+        [self.containerViewController cancleBtnClick];
         sender.image = [UIImage imageNamed:@"gallery_moment"];
         sender.title = nil;
         self.title = @"Moment";
         
-//        self.selectFooter.hidden = YES;
+        self.selectFooter.hidden = YES;
     }else if ([self.title isEqualToString:@"Moment"]){
         sender.image = [UIImage imageNamed:@"gallery_album"];
         self.navigationItem.rightBarButtonItem = nil;
@@ -61,22 +64,28 @@
         [sender setTitle:@"全选"];
         self.leftBarButtonItem.image = nil;
         [self.leftBarButtonItem setTitle:@"取消"];
+        self.title = @"已选择0张照片";
         
-//        self.selectFooter.hidden = NO;
-//        [self.containerViewController selectBtnClick];
-//        __weak GalleryViewController *weakSelf = self;
-//        self.containerViewController.block = ^(NSInteger count){
-//            weakSelf.title = [NSString stringWithFormat:@"已选择%ld张照片",(long)count];
-//        };
+        self.selectFooter.hidden = NO;
+        [self.containerViewController selectBtnClick];
+        __weak GalleryViewController *weakSelf = self;
+        self.containerViewController.block = ^(NSInteger count){
+            weakSelf.title = [NSString stringWithFormat:@"已选择%ld张照片",(long)count];
+        };
     }else if ([sender.title isEqualToString:@"全选"]){
         [sender setTitle:@"取消全选"];
         
-        
+        [self.containerViewController selectAllBtnClick];
     }else if ([sender.title isEqualToString:@"取消全选"]){
         [sender setTitle:@"全选"];
         
-        
+        [self.containerViewController deselectAllBtnClick];
     }
+}
+
+#pragma mark -- Delete
+- (void)deleteBtnClick{
+    
 }
 
 #pragma mark -- Navgation
@@ -95,6 +104,19 @@
     self.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"选择" style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonItemClick:)];
     
     [self.navigationItem setRightBarButtonItem:self.rightBarButtonItem animated:YES];
+}
+
+#pragma mark --Lazy
+- (SelectFooterView *)selectFooter{
+    if (!_selectFooter) {
+        SelectFooterView *selectFooter = [[SelectFooterView alloc] initWithFrame:CGRectMake(0, ScreenHeight - NavigationHeight - TabbarHeight, ScreenWidth, TabbarHeight)];
+        _selectFooter = selectFooter;
+        _selectFooter.block = ^(){
+            [self deleteBtnClick];
+        };
+        [self.view addSubview:_selectFooter];
+    }
+    return _selectFooter;
 }
 
 - (void)didReceiveMemoryWarning {

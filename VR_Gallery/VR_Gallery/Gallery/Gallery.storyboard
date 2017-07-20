@@ -149,6 +149,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </collectionReusableView>
+                                <connections>
+                                    <outlet property="delegate" destination="ycr-ru-3Lr" id="5hG-t3-OoE"/>
+                                </connections>
                             </collectionView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="2fR-G4-pfY">
                                 <rect key="frame" x="177" y="323" width="20" height="20"/>
@@ -165,6 +168,7 @@
                     </view>
                     <connections>
                         <outlet property="idView" destination="2fR-G4-pfY" id="LaR-WE-Ex7"/>
+                        <outlet property="momentView" destination="ggT-1v-BnL" id="YS2-ZN-VQp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="udd-IX-Sml" userLabel="First Responder" sceneMemberID="firstResponder"/>
