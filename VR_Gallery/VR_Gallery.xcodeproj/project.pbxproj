@@ -27,6 +27,18 @@
 		5C1B22D91F204F5200FACE64 /* Gallery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C1B22D81F204F5200FACE64 /* Gallery.storyboard */; };
 		5C1B22DC1F204FF400FACE64 /* MomentFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B22DB1F204FF400FACE64 /* MomentFlowLayout.m */; };
 		5C1B22DF1F2051A400FACE64 /* EmptySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B22DE1F2051A400FACE64 /* EmptySegue.m */; };
+		5C1B22E21F2052F500FACE64 /* MomentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B22E11F2052F500FACE64 /* MomentCell.m */; };
+		5C1B22E51F20552800FACE64 /* AlbumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B22E41F20552800FACE64 /* AlbumCell.m */; };
+		5C1B22E81F20576E00FACE64 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B22E71F20576E00FACE64 /* BaseViewController.m */; };
+		5C1B22EB1F2059CE00FACE64 /* ImageDataAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B22EA1F2059CE00FACE64 /* ImageDataAPI.m */; };
+		5C1B22EE1F2059FC00FACE64 /* PHSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B22ED1F2059FC00FACE64 /* PHSourceManager.m */; };
+		5C1B22F11F205A4E00FACE64 /* MomentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B22F01F205A4E00FACE64 /* MomentModel.m */; };
+		5C1B22F41F205A6800FACE64 /* VRMomentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B22F31F205A6800FACE64 /* VRMomentModel.m */; };
+		5C1B22F71F205A7900FACE64 /* AlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B22F61F205A7900FACE64 /* AlbumModel.m */; };
+		5C1B22FA1F205A8A00FACE64 /* VRAlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B22F91F205A8A00FACE64 /* VRAlbumModel.m */; };
+		5C1B22FD1F205D5C00FACE64 /* BaseDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B22FC1F205D5C00FACE64 /* BaseDataSource.m */; };
+		5C1B23001F205E3500FACE64 /* MomentDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B22FF1F205E3500FACE64 /* MomentDataSource.m */; };
+		5C1B23031F205EFD00FACE64 /* AlbumDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B23021F205EFD00FACE64 /* AlbumDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +83,30 @@
 		5C1B22DB1F204FF400FACE64 /* MomentFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MomentFlowLayout.m; sourceTree = "<group>"; };
 		5C1B22DD1F2051A400FACE64 /* EmptySegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptySegue.h; sourceTree = "<group>"; };
 		5C1B22DE1F2051A400FACE64 /* EmptySegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptySegue.m; sourceTree = "<group>"; };
+		5C1B22E01F2052F500FACE64 /* MomentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MomentCell.h; sourceTree = "<group>"; };
+		5C1B22E11F2052F500FACE64 /* MomentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MomentCell.m; sourceTree = "<group>"; };
+		5C1B22E31F20552800FACE64 /* AlbumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumCell.h; sourceTree = "<group>"; };
+		5C1B22E41F20552800FACE64 /* AlbumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumCell.m; sourceTree = "<group>"; };
+		5C1B22E61F20576E00FACE64 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		5C1B22E71F20576E00FACE64 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		5C1B22E91F2059CE00FACE64 /* ImageDataAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDataAPI.h; sourceTree = "<group>"; };
+		5C1B22EA1F2059CE00FACE64 /* ImageDataAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDataAPI.m; sourceTree = "<group>"; };
+		5C1B22EC1F2059FC00FACE64 /* PHSourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHSourceManager.h; sourceTree = "<group>"; };
+		5C1B22ED1F2059FC00FACE64 /* PHSourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHSourceManager.m; sourceTree = "<group>"; };
+		5C1B22EF1F205A4E00FACE64 /* MomentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MomentModel.h; sourceTree = "<group>"; };
+		5C1B22F01F205A4E00FACE64 /* MomentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MomentModel.m; sourceTree = "<group>"; };
+		5C1B22F21F205A6800FACE64 /* VRMomentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VRMomentModel.h; sourceTree = "<group>"; };
+		5C1B22F31F205A6800FACE64 /* VRMomentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VRMomentModel.m; sourceTree = "<group>"; };
+		5C1B22F51F205A7900FACE64 /* AlbumModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumModel.h; sourceTree = "<group>"; };
+		5C1B22F61F205A7900FACE64 /* AlbumModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumModel.m; sourceTree = "<group>"; };
+		5C1B22F81F205A8A00FACE64 /* VRAlbumModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VRAlbumModel.h; sourceTree = "<group>"; };
+		5C1B22F91F205A8A00FACE64 /* VRAlbumModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VRAlbumModel.m; sourceTree = "<group>"; };
+		5C1B22FB1F205D5C00FACE64 /* BaseDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseDataSource.h; sourceTree = "<group>"; };
+		5C1B22FC1F205D5C00FACE64 /* BaseDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDataSource.m; sourceTree = "<group>"; };
+		5C1B22FE1F205E3500FACE64 /* MomentDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MomentDataSource.h; sourceTree = "<group>"; };
+		5C1B22FF1F205E3500FACE64 /* MomentDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MomentDataSource.m; sourceTree = "<group>"; };
+		5C1B23011F205EFD00FACE64 /* AlbumDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumDataSource.h; sourceTree = "<group>"; };
+		5C1B23021F205EFD00FACE64 /* AlbumDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumDataSource.m; sourceTree = "<group>"; };
 		E9A8A98313CE426FEDB01065 /* libPods-VR_Gallery.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VR_Gallery.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F205431E903014D09100CD0E /* Pods-VR_Gallery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VR_Gallery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VR_Gallery/Pods-VR_Gallery.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -214,6 +250,10 @@
 		5C1B22CD1F204D0D00FACE64 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				5C1B22E01F2052F500FACE64 /* MomentCell.h */,
+				5C1B22E11F2052F500FACE64 /* MomentCell.m */,
+				5C1B22E31F20552800FACE64 /* AlbumCell.h */,
+				5C1B22E41F20552800FACE64 /* AlbumCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -222,6 +262,8 @@
 			isa = PBXGroup;
 			children = (
 				5C1B22CF1F204D0D00FACE64 /* ChildController */,
+				5C1B22E61F20576E00FACE64 /* BaseViewController.h */,
+				5C1B22E71F20576E00FACE64 /* BaseViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -236,6 +278,10 @@
 		5C1B22D01F204D0D00FACE64 /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
+				5C1B22E91F2059CE00FACE64 /* ImageDataAPI.h */,
+				5C1B22EA1F2059CE00FACE64 /* ImageDataAPI.m */,
+				5C1B22EC1F2059FC00FACE64 /* PHSourceManager.h */,
+				5C1B22ED1F2059FC00FACE64 /* PHSourceManager.m */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -243,6 +289,14 @@
 		5C1B22D11F204D0D00FACE64 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				5C1B22EF1F205A4E00FACE64 /* MomentModel.h */,
+				5C1B22F01F205A4E00FACE64 /* MomentModel.m */,
+				5C1B22F21F205A6800FACE64 /* VRMomentModel.h */,
+				5C1B22F31F205A6800FACE64 /* VRMomentModel.m */,
+				5C1B22F51F205A7900FACE64 /* AlbumModel.h */,
+				5C1B22F61F205A7900FACE64 /* AlbumModel.m */,
+				5C1B22F81F205A8A00FACE64 /* VRAlbumModel.h */,
+				5C1B22F91F205A8A00FACE64 /* VRAlbumModel.m */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -250,6 +304,12 @@
 		5C1B22D21F204D0D00FACE64 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				5C1B22FB1F205D5C00FACE64 /* BaseDataSource.h */,
+				5C1B22FC1F205D5C00FACE64 /* BaseDataSource.m */,
+				5C1B22FE1F205E3500FACE64 /* MomentDataSource.h */,
+				5C1B22FF1F205E3500FACE64 /* MomentDataSource.m */,
+				5C1B23011F205EFD00FACE64 /* AlbumDataSource.h */,
+				5C1B23021F205EFD00FACE64 /* AlbumDataSource.m */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -420,19 +480,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C1B23001F205E3500FACE64 /* MomentDataSource.m in Sources */,
+				5C1B22EE1F2059FC00FACE64 /* PHSourceManager.m in Sources */,
+				5C1B22E81F20576E00FACE64 /* BaseViewController.m in Sources */,
+				5C1B22FA1F205A8A00FACE64 /* VRAlbumModel.m in Sources */,
 				5C1B22A41F204AC000FACE64 /* UIColor+Addition.m in Sources */,
+				5C1B22F11F205A4E00FACE64 /* MomentModel.m in Sources */,
 				5C1B22C41F204B1F00FACE64 /* MWGridCell.m in Sources */,
 				5C1B22DC1F204FF400FACE64 /* MomentFlowLayout.m in Sources */,
 				5C1B22C91F204B1F00FACE64 /* MWTapDetectingView.m in Sources */,
 				5C1B22C51F204B1F00FACE64 /* MWGridViewController.m in Sources */,
+				5C1B22F41F205A6800FACE64 /* VRMomentModel.m in Sources */,
 				5C1B22C71F204B1F00FACE64 /* MWPhotoBrowser.m in Sources */,
+				5C1B22E21F2052F500FACE64 /* MomentCell.m in Sources */,
 				5C1B22C81F204B1F00FACE64 /* MWTapDetectingImageView.m in Sources */,
+				5C1B22FD1F205D5C00FACE64 /* BaseDataSource.m in Sources */,
 				5C1B22C11F204B1F00FACE64 /* DACircularProgressView.m in Sources */,
 				5C1B22871F1F4BB700FACE64 /* main.m in Sources */,
 				5C1B22CA1F204B1F00FACE64 /* MWZoomingScrollView.m in Sources */,
+				5C1B22E51F20552800FACE64 /* AlbumCell.m in Sources */,
 				5C1B22CB1F204B1F00FACE64 /* UIImage+MWPhotoBrowser.m in Sources */,
+				5C1B22F71F205A7900FACE64 /* AlbumModel.m in Sources */,
 				5C1B22C31F204B1F00FACE64 /* MWCaptionView.m in Sources */,
 				5C1B229F1F1F4C0B00FACE64 /* AppDelegate.m in Sources */,
+				5C1B22EB1F2059CE00FACE64 /* ImageDataAPI.m in Sources */,
+				5C1B23031F205EFD00FACE64 /* AlbumDataSource.m in Sources */,
 				5C1B22C61F204B1F00FACE64 /* MWPhoto.m in Sources */,
 				5C1B22C21F204B1F00FACE64 /* DALabeledCircularProgressView.m in Sources */,
 				5C1B22DF1F2051A400FACE64 /* EmptySegue.m in Sources */,
