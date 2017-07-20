@@ -102,6 +102,8 @@
 			children = (
 				5C1B229C1F1F4C0B00FACE64 /* Application */,
 				5C1B22A11F204AB000FACE64 /* Extension */,
+				5C1B22D51F204D1C00FACE64 /* Tool */,
+				5C1B22CC1F204D0D00FACE64 /* Gallery */,
 				5C1B22A51F204B1600FACE64 /* Vendor */,
 				5C1B22851F1F4BB700FACE64 /* Supporting Files */,
 			);
@@ -184,6 +186,84 @@
 				5C1B22C01F204B1F00FACE64 /* UIImage+MWPhotoBrowser.m */,
 			);
 			path = MWPhotoBrowser;
+			sourceTree = "<group>";
+		};
+		5C1B22CC1F204D0D00FACE64 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				5C1B22CD1F204D0D00FACE64 /* Cell */,
+				5C1B22CE1F204D0D00FACE64 /* Controller */,
+				5C1B22D01F204D0D00FACE64 /* DataManager */,
+				5C1B22D11F204D0D00FACE64 /* DataModel */,
+				5C1B22D21F204D0D00FACE64 /* DataSource */,
+				5C1B22D31F204D0D00FACE64 /* Layout */,
+				5C1B22D41F204D0D00FACE64 /* View */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
+		5C1B22CD1F204D0D00FACE64 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		5C1B22CE1F204D0D00FACE64 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5C1B22CF1F204D0D00FACE64 /* ChildController */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5C1B22CF1F204D0D00FACE64 /* ChildController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ChildController;
+			sourceTree = "<group>";
+		};
+		5C1B22D01F204D0D00FACE64 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		5C1B22D11F204D0D00FACE64 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		5C1B22D21F204D0D00FACE64 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		5C1B22D31F204D0D00FACE64 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		5C1B22D41F204D0D00FACE64 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5C1B22D51F204D1C00FACE64 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 		8C7ADDC1275EE367D1AE2EC4 /* Pods */ = {
