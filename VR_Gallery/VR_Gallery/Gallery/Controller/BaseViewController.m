@@ -17,6 +17,33 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self.view setBackgroundColor:[UIColor whiteColor]];
+    serialPGQueue = dispatch_queue_create("com.rylan", DISPATCH_QUEUE_SERIAL);
+    
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 7.0f){
+        [self setEdgesForExtendedLayout:UIRectEdgeNone];
+        [self setAutomaticallyAdjustsScrollViewInsets:NO];
+    }
+    
+    // prevent user action before viewDidApperar
+    [self.navigationController.view setUserInteractionEnabled:NO];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    // restore interaction. Cannt respond back action before viewDidAppear
+    [self.navigationController.view setUserInteractionEnabled:YES];
+}
+
+#pragma mark - UIActivityIndicatorView
+- (void)showIndicatorView{
+    [self.idView setHidden:NO]; [self.idView startAnimating];
+}
+
+- (void)hideIndicatorView{
+    [self.idView stopAnimating]; [self.idView setHidden:YES];
 }
 
 - (void)didReceiveMemoryWarning {

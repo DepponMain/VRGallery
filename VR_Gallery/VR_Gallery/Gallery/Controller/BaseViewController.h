@@ -7,9 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ImageDataAPI.h"
 
 #define PHOTO_LIST_SIZE CGSizeMake((ScreenWidth - 5 * 17.0 * Pt - 0.5) / 4, (ScreenWidth - 5 * 17.0 * Pt - 0.5) / 4)
 
 @interface BaseViewController : UIViewController
+{
+    dispatch_queue_t serialPGQueue;
+}
+
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *idView;
+
+- (void)showIndicatorView;
+- (void)hideIndicatorView;
 
 @end
