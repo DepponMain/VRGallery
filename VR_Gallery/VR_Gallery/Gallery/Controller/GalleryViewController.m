@@ -33,6 +33,8 @@
     [self.containerViewController swapToViewControllerWithSigueID:SegueIdentifierMoment];
     
     [self creatNavigation];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(momentImageDelete:) name:@"momentImageDeleteNotification" object:nil];
 }
 
 #pragma mark -- Action
@@ -85,12 +87,18 @@
 
 #pragma mark -- Delete
 - (void)deleteBtnClick{
-    
+    [self.containerViewController deleteBtnClick];
+}
+
+#pragma mark -- 删除图片
+- (void)momentImageDelete:(NSNotification *)notification{
+    [self leftBarButtonItemClick:_leftBarButtonItem];
 }
 
 #pragma mark -- Navgation
 - (void)creatNavigation{
     self.title = @"Moment";
+    self.navigationController.navigationBar.tintColor = ThemeColor;
     
     [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:NavigationTitleFont], NSForegroundColorAttributeName: ThemeColor} forState:UIControlStateNormal];
     

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AlbumModel.h"
 
 @interface AlbumCell : UITableViewCell
+
+- (void)configureWithAlbumObj:(AlbumModel *)obj;
 
 @end

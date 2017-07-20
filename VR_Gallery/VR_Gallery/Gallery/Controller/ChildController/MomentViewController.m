@@ -14,6 +14,7 @@
 #import "VRMomentModel.h"
 #import "MomentDataSource.h"
 #import "MomentFlowLayout.h"
+#import "PushToBrowser.h"
 
 @interface MomentViewController ()<UICollisionBehaviorDelegate>
 
@@ -110,7 +111,7 @@
             
             NSMutableArray *dArr = (NSMutableArray *)obj;
             NSMutableArray *resultArr = [[NSMutableArray alloc] init];
-            __block int tag = 0; __block BOOL isFind = NO, isHave = NO;
+            __block int tag = 0; __block BOOL isFind = NO;
             [self.localAssetArray removeAllObjects];
             
             for (int i = 0; i < dArr.count; i++) {
@@ -130,19 +131,13 @@
                     }];
                 }
                 if (isFind) {
-                    vr_group.assetObjs = assetArr; [resultArr addObject:vr_group]; isFind = NO; isHave = YES;
+                    vr_group.assetObjs = assetArr; [resultArr addObject:vr_group]; isFind = NO;
                 }
             }
-            if (isHave) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    if (done) {[self hideIndicatorView];self.browseEnable = YES;}
-                    [self reloadWithData:resultArr];
-                });
-            }else{
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    if (done) {[self hideIndicatorView];self.browseEnable = YES;}
-                });
-            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (done) {[self hideIndicatorView];self.browseEnable = YES;}
+                [self reloadWithData:resultArr];
+            });
         }];
     });
 }
@@ -190,7 +185,7 @@
             }
         }
         
-//        [HJPushToBrowser pushToBrowserWith:index assetArray:_localAssetArray byWhichNavigation:self.navigationController];
+        [PushToBrowser pushToBrowserWith:index assetArray:_localAssetArray byWhichNavigation:self.navigationController];
     }
 }
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
