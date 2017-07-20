@@ -24,6 +24,9 @@
 		5C1B22C91F204B1F00FACE64 /* MWTapDetectingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B22BC1F204B1F00FACE64 /* MWTapDetectingView.m */; };
 		5C1B22CA1F204B1F00FACE64 /* MWZoomingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B22BE1F204B1F00FACE64 /* MWZoomingScrollView.m */; };
 		5C1B22CB1F204B1F00FACE64 /* UIImage+MWPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B22C01F204B1F00FACE64 /* UIImage+MWPhotoBrowser.m */; };
+		5C1B22D91F204F5200FACE64 /* Gallery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C1B22D81F204F5200FACE64 /* Gallery.storyboard */; };
+		5C1B22DC1F204FF400FACE64 /* MomentFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B22DB1F204FF400FACE64 /* MomentFlowLayout.m */; };
+		5C1B22DF1F2051A400FACE64 /* EmptySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B22DE1F2051A400FACE64 /* EmptySegue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +66,11 @@
 		5C1B22BE1F204B1F00FACE64 /* MWZoomingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWZoomingScrollView.m; sourceTree = "<group>"; };
 		5C1B22BF1F204B1F00FACE64 /* UIImage+MWPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MWPhotoBrowser.h"; sourceTree = "<group>"; };
 		5C1B22C01F204B1F00FACE64 /* UIImage+MWPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MWPhotoBrowser.m"; sourceTree = "<group>"; };
+		5C1B22D81F204F5200FACE64 /* Gallery.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Gallery.storyboard; sourceTree = "<group>"; };
+		5C1B22DA1F204FF400FACE64 /* MomentFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MomentFlowLayout.h; sourceTree = "<group>"; };
+		5C1B22DB1F204FF400FACE64 /* MomentFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MomentFlowLayout.m; sourceTree = "<group>"; };
+		5C1B22DD1F2051A400FACE64 /* EmptySegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptySegue.h; sourceTree = "<group>"; };
+		5C1B22DE1F2051A400FACE64 /* EmptySegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptySegue.m; sourceTree = "<group>"; };
 		E9A8A98313CE426FEDB01065 /* libPods-VR_Gallery.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VR_Gallery.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F205431E903014D09100CD0E /* Pods-VR_Gallery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VR_Gallery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VR_Gallery/Pods-VR_Gallery.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -198,6 +206,7 @@
 				5C1B22D21F204D0D00FACE64 /* DataSource */,
 				5C1B22D31F204D0D00FACE64 /* Layout */,
 				5C1B22D41F204D0D00FACE64 /* View */,
+				5C1B22D81F204F5200FACE64 /* Gallery.storyboard */,
 			);
 			path = Gallery;
 			sourceTree = "<group>";
@@ -248,6 +257,8 @@
 		5C1B22D31F204D0D00FACE64 /* Layout */ = {
 			isa = PBXGroup;
 			children = (
+				5C1B22DA1F204FF400FACE64 /* MomentFlowLayout.h */,
+				5C1B22DB1F204FF400FACE64 /* MomentFlowLayout.m */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -255,6 +266,8 @@
 		5C1B22D41F204D0D00FACE64 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5C1B22DD1F2051A400FACE64 /* EmptySegue.h */,
+				5C1B22DE1F2051A400FACE64 /* EmptySegue.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -347,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C1B22951F1F4BB700FACE64 /* LaunchScreen.storyboard in Resources */,
+				5C1B22D91F204F5200FACE64 /* Gallery.storyboard in Resources */,
 				5C1B22921F1F4BB700FACE64 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,6 +422,7 @@
 			files = (
 				5C1B22A41F204AC000FACE64 /* UIColor+Addition.m in Sources */,
 				5C1B22C41F204B1F00FACE64 /* MWGridCell.m in Sources */,
+				5C1B22DC1F204FF400FACE64 /* MomentFlowLayout.m in Sources */,
 				5C1B22C91F204B1F00FACE64 /* MWTapDetectingView.m in Sources */,
 				5C1B22C51F204B1F00FACE64 /* MWGridViewController.m in Sources */,
 				5C1B22C71F204B1F00FACE64 /* MWPhotoBrowser.m in Sources */,
@@ -420,6 +435,7 @@
 				5C1B229F1F1F4C0B00FACE64 /* AppDelegate.m in Sources */,
 				5C1B22C61F204B1F00FACE64 /* MWPhoto.m in Sources */,
 				5C1B22C21F204B1F00FACE64 /* DALabeledCircularProgressView.m in Sources */,
+				5C1B22DF1F2051A400FACE64 /* EmptySegue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
