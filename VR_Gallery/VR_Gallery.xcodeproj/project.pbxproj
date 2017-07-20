@@ -12,6 +12,18 @@
 		5C1B22921F1F4BB700FACE64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C1B22911F1F4BB700FACE64 /* Assets.xcassets */; };
 		5C1B22951F1F4BB700FACE64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C1B22931F1F4BB700FACE64 /* LaunchScreen.storyboard */; };
 		5C1B229F1F1F4C0B00FACE64 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B229E1F1F4C0B00FACE64 /* AppDelegate.m */; };
+		5C1B22A41F204AC000FACE64 /* UIColor+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B22A31F204AC000FACE64 /* UIColor+Addition.m */; };
+		5C1B22C11F204B1F00FACE64 /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B22A81F204B1F00FACE64 /* DACircularProgressView.m */; };
+		5C1B22C21F204B1F00FACE64 /* DALabeledCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B22AA1F204B1F00FACE64 /* DALabeledCircularProgressView.m */; };
+		5C1B22C31F204B1F00FACE64 /* MWCaptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B22AD1F204B1F00FACE64 /* MWCaptionView.m */; };
+		5C1B22C41F204B1F00FACE64 /* MWGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B22B01F204B1F00FACE64 /* MWGridCell.m */; };
+		5C1B22C51F204B1F00FACE64 /* MWGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B22B21F204B1F00FACE64 /* MWGridViewController.m */; };
+		5C1B22C61F204B1F00FACE64 /* MWPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B22B41F204B1F00FACE64 /* MWPhoto.m */; };
+		5C1B22C71F204B1F00FACE64 /* MWPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B22B61F204B1F00FACE64 /* MWPhotoBrowser.m */; };
+		5C1B22C81F204B1F00FACE64 /* MWTapDetectingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B22BA1F204B1F00FACE64 /* MWTapDetectingImageView.m */; };
+		5C1B22C91F204B1F00FACE64 /* MWTapDetectingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B22BC1F204B1F00FACE64 /* MWTapDetectingView.m */; };
+		5C1B22CA1F204B1F00FACE64 /* MWZoomingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B22BE1F204B1F00FACE64 /* MWZoomingScrollView.m */; };
+		5C1B22CB1F204B1F00FACE64 /* UIImage+MWPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B22C01F204B1F00FACE64 /* UIImage+MWPhotoBrowser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +35,34 @@
 		5C1B22961F1F4BB700FACE64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C1B229D1F1F4C0B00FACE64 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5C1B229E1F1F4C0B00FACE64 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5C1B22A01F20495B00FACE64 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		5C1B22A21F204AC000FACE64 /* UIColor+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Addition.h"; sourceTree = "<group>"; };
+		5C1B22A31F204AC000FACE64 /* UIColor+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Addition.m"; sourceTree = "<group>"; };
+		5C1B22A71F204B1F00FACE64 /* DACircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DACircularProgressView.h; sourceTree = "<group>"; };
+		5C1B22A81F204B1F00FACE64 /* DACircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACircularProgressView.m; sourceTree = "<group>"; };
+		5C1B22A91F204B1F00FACE64 /* DALabeledCircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DALabeledCircularProgressView.h; sourceTree = "<group>"; };
+		5C1B22AA1F204B1F00FACE64 /* DALabeledCircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DALabeledCircularProgressView.m; sourceTree = "<group>"; };
+		5C1B22AC1F204B1F00FACE64 /* MWCaptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWCaptionView.h; sourceTree = "<group>"; };
+		5C1B22AD1F204B1F00FACE64 /* MWCaptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWCaptionView.m; sourceTree = "<group>"; };
+		5C1B22AE1F204B1F00FACE64 /* MWCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWCommon.h; sourceTree = "<group>"; };
+		5C1B22AF1F204B1F00FACE64 /* MWGridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWGridCell.h; sourceTree = "<group>"; };
+		5C1B22B01F204B1F00FACE64 /* MWGridCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWGridCell.m; sourceTree = "<group>"; };
+		5C1B22B11F204B1F00FACE64 /* MWGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWGridViewController.h; sourceTree = "<group>"; };
+		5C1B22B21F204B1F00FACE64 /* MWGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWGridViewController.m; sourceTree = "<group>"; };
+		5C1B22B31F204B1F00FACE64 /* MWPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWPhoto.h; sourceTree = "<group>"; };
+		5C1B22B41F204B1F00FACE64 /* MWPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWPhoto.m; sourceTree = "<group>"; };
+		5C1B22B51F204B1F00FACE64 /* MWPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWPhotoBrowser.h; sourceTree = "<group>"; };
+		5C1B22B61F204B1F00FACE64 /* MWPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWPhotoBrowser.m; sourceTree = "<group>"; };
+		5C1B22B71F204B1F00FACE64 /* MWPhotoBrowserPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWPhotoBrowserPrivate.h; sourceTree = "<group>"; };
+		5C1B22B81F204B1F00FACE64 /* MWPhotoProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWPhotoProtocol.h; sourceTree = "<group>"; };
+		5C1B22B91F204B1F00FACE64 /* MWTapDetectingImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTapDetectingImageView.h; sourceTree = "<group>"; };
+		5C1B22BA1F204B1F00FACE64 /* MWTapDetectingImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTapDetectingImageView.m; sourceTree = "<group>"; };
+		5C1B22BB1F204B1F00FACE64 /* MWTapDetectingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTapDetectingView.h; sourceTree = "<group>"; };
+		5C1B22BC1F204B1F00FACE64 /* MWTapDetectingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTapDetectingView.m; sourceTree = "<group>"; };
+		5C1B22BD1F204B1F00FACE64 /* MWZoomingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWZoomingScrollView.h; sourceTree = "<group>"; };
+		5C1B22BE1F204B1F00FACE64 /* MWZoomingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWZoomingScrollView.m; sourceTree = "<group>"; };
+		5C1B22BF1F204B1F00FACE64 /* UIImage+MWPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MWPhotoBrowser.h"; sourceTree = "<group>"; };
+		5C1B22C01F204B1F00FACE64 /* UIImage+MWPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MWPhotoBrowser.m"; sourceTree = "<group>"; };
 		E9A8A98313CE426FEDB01065 /* libPods-VR_Gallery.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VR_Gallery.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F205431E903014D09100CD0E /* Pods-VR_Gallery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VR_Gallery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VR_Gallery/Pods-VR_Gallery.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,6 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				5C1B229C1F1F4C0B00FACE64 /* Application */,
+				5C1B22A11F204AB000FACE64 /* Extension */,
+				5C1B22A51F204B1600FACE64 /* Vendor */,
 				5C1B22851F1F4BB700FACE64 /* Supporting Files */,
 			);
 			path = VR_Gallery;
@@ -82,8 +124,66 @@
 			children = (
 				5C1B229D1F1F4C0B00FACE64 /* AppDelegate.h */,
 				5C1B229E1F1F4C0B00FACE64 /* AppDelegate.m */,
+				5C1B22A01F20495B00FACE64 /* PrefixHeader.pch */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		5C1B22A11F204AB000FACE64 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5C1B22A21F204AC000FACE64 /* UIColor+Addition.h */,
+				5C1B22A31F204AC000FACE64 /* UIColor+Addition.m */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		5C1B22A51F204B1600FACE64 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				5C1B22A61F204B1F00FACE64 /* DACircularProgress */,
+				5C1B22AB1F204B1F00FACE64 /* MWPhotoBrowser */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		5C1B22A61F204B1F00FACE64 /* DACircularProgress */ = {
+			isa = PBXGroup;
+			children = (
+				5C1B22A71F204B1F00FACE64 /* DACircularProgressView.h */,
+				5C1B22A81F204B1F00FACE64 /* DACircularProgressView.m */,
+				5C1B22A91F204B1F00FACE64 /* DALabeledCircularProgressView.h */,
+				5C1B22AA1F204B1F00FACE64 /* DALabeledCircularProgressView.m */,
+			);
+			path = DACircularProgress;
+			sourceTree = "<group>";
+		};
+		5C1B22AB1F204B1F00FACE64 /* MWPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				5C1B22AC1F204B1F00FACE64 /* MWCaptionView.h */,
+				5C1B22AD1F204B1F00FACE64 /* MWCaptionView.m */,
+				5C1B22AE1F204B1F00FACE64 /* MWCommon.h */,
+				5C1B22AF1F204B1F00FACE64 /* MWGridCell.h */,
+				5C1B22B01F204B1F00FACE64 /* MWGridCell.m */,
+				5C1B22B11F204B1F00FACE64 /* MWGridViewController.h */,
+				5C1B22B21F204B1F00FACE64 /* MWGridViewController.m */,
+				5C1B22B31F204B1F00FACE64 /* MWPhoto.h */,
+				5C1B22B41F204B1F00FACE64 /* MWPhoto.m */,
+				5C1B22B51F204B1F00FACE64 /* MWPhotoBrowser.h */,
+				5C1B22B61F204B1F00FACE64 /* MWPhotoBrowser.m */,
+				5C1B22B71F204B1F00FACE64 /* MWPhotoBrowserPrivate.h */,
+				5C1B22B81F204B1F00FACE64 /* MWPhotoProtocol.h */,
+				5C1B22B91F204B1F00FACE64 /* MWTapDetectingImageView.h */,
+				5C1B22BA1F204B1F00FACE64 /* MWTapDetectingImageView.m */,
+				5C1B22BB1F204B1F00FACE64 /* MWTapDetectingView.h */,
+				5C1B22BC1F204B1F00FACE64 /* MWTapDetectingView.m */,
+				5C1B22BD1F204B1F00FACE64 /* MWZoomingScrollView.h */,
+				5C1B22BE1F204B1F00FACE64 /* MWZoomingScrollView.m */,
+				5C1B22BF1F204B1F00FACE64 /* UIImage+MWPhotoBrowser.h */,
+				5C1B22C01F204B1F00FACE64 /* UIImage+MWPhotoBrowser.m */,
+			);
+			path = MWPhotoBrowser;
 			sourceTree = "<group>";
 		};
 		8C7ADDC1275EE367D1AE2EC4 /* Pods */ = {
@@ -132,7 +232,7 @@
 		5C1B227A1F1F4BB700FACE64 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = HJ;
+				CLASSPREFIX = "";
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = haiJiang;
 				TargetAttributes = {
@@ -226,8 +326,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C1B22A41F204AC000FACE64 /* UIColor+Addition.m in Sources */,
+				5C1B22C41F204B1F00FACE64 /* MWGridCell.m in Sources */,
+				5C1B22C91F204B1F00FACE64 /* MWTapDetectingView.m in Sources */,
+				5C1B22C51F204B1F00FACE64 /* MWGridViewController.m in Sources */,
+				5C1B22C71F204B1F00FACE64 /* MWPhotoBrowser.m in Sources */,
+				5C1B22C81F204B1F00FACE64 /* MWTapDetectingImageView.m in Sources */,
+				5C1B22C11F204B1F00FACE64 /* DACircularProgressView.m in Sources */,
 				5C1B22871F1F4BB700FACE64 /* main.m in Sources */,
+				5C1B22CA1F204B1F00FACE64 /* MWZoomingScrollView.m in Sources */,
+				5C1B22CB1F204B1F00FACE64 /* UIImage+MWPhotoBrowser.m in Sources */,
+				5C1B22C31F204B1F00FACE64 /* MWCaptionView.m in Sources */,
 				5C1B229F1F1F4C0B00FACE64 /* AppDelegate.m in Sources */,
+				5C1B22C61F204B1F00FACE64 /* MWPhoto.m in Sources */,
+				5C1B22C21F204B1F00FACE64 /* DALabeledCircularProgressView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +453,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RG5N2563HN;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/VR_Gallery/Application/PrefixHeader.pch";
 				INFOPLIST_FILE = VR_Gallery/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -355,6 +469,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RG5N2563HN;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/VR_Gallery/Application/PrefixHeader.pch";
 				INFOPLIST_FILE = VR_Gallery/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -382,6 +498,7 @@
 				5C1B229B1F1F4BB700FACE64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
