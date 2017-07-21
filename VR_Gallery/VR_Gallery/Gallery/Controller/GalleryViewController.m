@@ -10,8 +10,9 @@
 #import "GalleryViewController.h"
 #import "ContainerViewController.h"
 #import "SelectFooterView.h"
+#import "MWPhotoBrowser.h"
 
-@interface GalleryViewController ()
+@interface GalleryViewController ()<MWPhotoBrowserDelegate>
 
 @property (nonatomic, weak) ContainerViewController *containerViewController;
 
@@ -19,6 +20,9 @@
 @property (nonatomic, strong) UIBarButtonItem *rightBarButtonItem;
 
 @property (nonatomic, weak) SelectFooterView *selectFooter;
+
+@property (nonatomic, strong) NSMutableArray *photos;
+@property (nonatomic, strong) NSMutableArray *thumbs;
 
 @end
 
@@ -33,6 +37,8 @@
     [self.containerViewController swapToViewControllerWithSigueID:SegueIdentifierMoment];
     
     [self creatNavigation];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveImagePicker:) name:@"ImageDidSelectNotification" object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(momentImageDelete:) name:@"momentImageDeleteNotification" object:nil];
 }
@@ -85,14 +91,88 @@
     }
 }
 
-#pragma mark -- Delete
+#pragma mark -- DeleteBtn Click
 - (void)deleteBtnClick{
     [self.containerViewController deleteBtnClick];
 }
 
-#pragma mark -- 删除图片
+#pragma mark -- Notification Action
 - (void)momentImageDelete:(NSNotification *)notification{
     [self leftBarButtonItemClick:_leftBarButtonItem];
+}
+- (void)didReceiveImagePicker:(NSNotification *)notification{
+    NSDictionary *messageDic = [notification object];
+    NSMutableArray * array = messageDic[@"array"];
+    NSString *indexStr = messageDic[@"index"];
+    int index = [indexStr intValue];
+    NSMutableArray *photos = [[NSMutableArray alloc] init];
+    NSMutableArray *thumbs = [[NSMutableArray alloc] init];
+    
+    @synchronized(array) {
+        NSMutableArray *copy = [array copy];
+        if (NSClassFromString(@"PHAsset")) {
+            // Photos library
+            UIScreen *screen = [UIScreen mainScreen];
+            CGFloat scale = screen.scale;
+            // Sizing is very rough... more thought required in a real implementation
+            CGFloat imageSize = MAX(screen.bounds.size.width, screen.bounds.size.height) * 1.5;
+            CGSize imageTargetSize = CGSizeMake(imageSize * scale, imageSize * scale);
+            CGSize thumbTargetSize = CGSizeMake(imageSize / 3.0 * scale, imageSize / 3.0 * scale);
+            for (PHAsset *asset in copy) {
+                [photos addObject:[MWPhoto photoWithAsset:asset targetSize:imageTargetSize]];
+                [thumbs addObject:[MWPhoto photoWithAsset:asset targetSize:thumbTargetSize]];
+            }
+        }
+    }
+    
+    self.photos = photos;
+    self.thumbs = thumbs;
+    
+    // Create browser
+    MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+    browser.displayActionButton = YES;
+    browser.displayNavArrows = NO;
+    browser.displaySelectionButtons = NO;
+    browser.alwaysShowControls = NO;
+    browser.zoomPhotosToFill = YES;
+    browser.enableGrid = YES;
+    browser.startOnGrid = NO;
+    browser.enableSwipeToDismiss = NO;
+    browser.autoPlayOnAppear = NO;
+    [browser setCurrentPhotoIndex:index];
+    browser.dataSource = self.photos;
+    browser.imageDateDict = [self imageDateWithObj:self.photos];
+    [self.navigationController pushViewController:browser animated:YES];
+    double delayInSeconds = 3;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+    });
+}
+#pragma mark -- title of time
+- (NSMutableDictionary *)imageDateWithObj:(NSMutableArray *)obj{
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+    
+    for (int i = 0; i < obj.count; i++) {
+        MWPhoto *photos = obj[i];
+        PHAsset *asset = photos.asset;
+        NSDate *date = asset.creationDate;
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy年MM月dd日HH:mm"];
+        NSString *dateStr = [dateFormatter stringFromDate:date];
+        [dict setValue:dateStr forKey:[NSString stringWithFormat:@"%@",asset.localIdentifier]];
+    }
+    return dict;
+}
+
+#pragma mark - MWPhotoBrowserDelegate
+- (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser {
+    return _photos.count;
+}
+- (id <MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index {
+    if (index < _photos.count)
+        return [_photos objectAtIndex:index];
+    return nil;
 }
 
 #pragma mark -- Navgation

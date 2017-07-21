@@ -8,13 +8,11 @@
 
 #import "MomentViewController.h"
 #import <Photos/Photos.h>
-
 #import "MomentCell.h"
 #import "MomentModel.h"
 #import "VRMomentModel.h"
 #import "MomentDataSource.h"
 #import "MomentFlowLayout.h"
-#import "PushToBrowser.h"
 
 @interface MomentViewController ()<UICollisionBehaviorDelegate>
 
@@ -185,7 +183,8 @@
             }
         }
         
-        [PushToBrowser pushToBrowserWith:index assetArray:_localAssetArray byWhichNavigation:self.navigationController];
+        NSDictionary *messageDic = @{@"array":_localAssetArray,@"index":[NSString stringWithFormat:@"%ld",(long)index]};
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"ImageDidSelectNotification" object:messageDic];
     }
 }
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -235,8 +234,8 @@
 - (void)deleteBtnClick{
     NSArray *selectArr = [self.selectAssetDict allValues];
     if (selectArr.count < 1) {
-        //        MBProgressHUD *hud=[(AppDelegate *)[UIApplication sharedApplication].delegate responseWithString:@"没有可删除的选项"];
-        //        [hud hide:YES afterDelay:0.5];
+//        MBProgressHUD *hud=[(AppDelegate *)[UIApplication sharedApplication].delegate responseWithString:@"没有可删除的选项"];
+//        [hud hide:YES afterDelay:0.5];
         return;
     }else{
         [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{

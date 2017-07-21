@@ -24,10 +24,7 @@
         
 }
 
-@property (nonatomic, strong) UIImage *image;
-@property (nonatomic, strong) NSURL *photoURL;
-@property (nonatomic, strong) PHAsset *asset;
-@property (nonatomic) CGSize assetTargetSize;
+
 
 - (void)imageLoadingComplete;
 

@@ -29,6 +29,7 @@
     self.albumView.separatorStyle = UITableViewCellSeparatorStyleNone;
     CellConfigureBlock configCell = ^(AlbumCell *cell, AlbumModel *group, NSIndexPath *indexPath){
         if (group.posterImage == nil) {
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             NSInteger cTag = cell.tag; // to determin if cell is reused
             [[ImageDataAPI sharedInstance] getPosterImageForAlbumObj:group completion:^(BOOL ret, id obj){
                 group.posterImage = (UIImage *)obj;

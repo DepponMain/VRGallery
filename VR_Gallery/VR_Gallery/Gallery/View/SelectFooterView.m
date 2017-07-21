@@ -23,7 +23,7 @@
     
     UIButton *deleteBtn = [[UIButton alloc] init];
     [self addSubview:deleteBtn];
-    [deleteBtn setImage:[UIImage imageNamed:@"gallery_image_state_delete"] forState:UIControlStateNormal];
+    [deleteBtn setImage:[UIImage imageNamed:@"gallery_delete"] forState:UIControlStateNormal];
     [deleteBtn addTarget:self action:@selector(deleteBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [deleteBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.height.centerY.equalTo(self);

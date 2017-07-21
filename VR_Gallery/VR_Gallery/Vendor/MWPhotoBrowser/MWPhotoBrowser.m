@@ -12,6 +12,7 @@
 #import "MWPhotoBrowserPrivate.h"
 #import "SDImageCache.h"
 #import "UIImage+MWPhotoBrowser.h"
+#import "CustomButton.h"
 
 #define PADDING                  10
 
@@ -65,7 +66,7 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
     _currentPageIndex = 0;
     _previousPageIndex = NSUIntegerMax;
     _currentVideoIndex = NSUIntegerMax;
-    _displayActionButton = YES;
+//    _displayActionButton = YES;
     _displayNavArrows = NO;
     _zoomPhotosToFill = YES;
     _performingLayout = NO; // Reset on view did appear
@@ -144,7 +145,7 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
     if (!_enableGrid) _startOnGrid = NO;
 	
 	// View
-	self.view.backgroundColor = [UIColor blackColor];
+	self.view.backgroundColor = [UIColor whiteColor];
     self.view.clipsToBounds = YES;
 	
 	// Setup paging scrolling view
@@ -155,17 +156,18 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
 	_pagingScrollView.delegate = self;
 	_pagingScrollView.showsHorizontalScrollIndicator = NO;
 	_pagingScrollView.showsVerticalScrollIndicator = NO;
-	_pagingScrollView.backgroundColor = [UIColor blackColor];
+	_pagingScrollView.backgroundColor = [UIColor colorWithRed:0.93 green:0.93 blue:0.93 alpha:1.00];
     _pagingScrollView.contentSize = [self contentSizeForPagingScrollView];
 	[self.view addSubview:_pagingScrollView];
 	
     // Toolbar
     _toolbar = [[UIToolbar alloc] initWithFrame:[self frameForToolbarAtOrientation:self.interfaceOrientation]];
     _toolbar.tintColor = [UIColor whiteColor];
+    _toolbar.backgroundColor = [UIColor whiteColor];
     _toolbar.barTintColor = nil;
     [_toolbar setBackgroundImage:nil forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsDefault];
     [_toolbar setBackgroundImage:nil forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsLandscapePhone];
-    _toolbar.barStyle = UIBarStyleBlackTranslucent;
+//    _toolbar.barStyle = UIBarStyleBlackTranslucent;
     _toolbar.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
     
     // Toolbar Items
@@ -177,7 +179,14 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
         _nextButton = [[UIBarButtonItem alloc] initWithImage:nextButtonImage style:UIBarButtonItemStylePlain target:self action:@selector(gotoNextPage)];
     }
     if (self.displayActionButton) {
-        _actionButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(actionButtonPressed:)];
+        CustomButton *VRButton = [[CustomButton alloc] init];
+        [VRButton setImage:[UIImage imageNamed:@"gallery_vr"] forState:UIControlStateNormal];
+        [VRButton setTitle:@"动景预览" forState:UIControlStateNormal];
+        [VRButton setTitleColor:[UIColor colorWithHex:0x666666] forState:UIControlStateNormal];
+        VRButton.titleLabel.font = [UIFont systemFontOfSize:11];
+        VRButton.frame = CGRectMake(ScreenWidth - 80, -10, 50, 40);
+        [VRButton addTarget:self action:@selector(previewVr) forControlEvents:UIControlEventTouchUpInside];
+        [_toolbar addSubview:VRButton];
     }
     
     // Update
@@ -243,7 +252,7 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
     // Left button - Grid
     if (_enableGrid) {
         hasItems = YES;
-        [items addObject:[[UIBarButtonItem alloc] initWithImage:[UIImage imageForResourcePath:@"MWPhotoBrowser.bundle/UIBarButtonItemGrid" ofType:@"png" inBundle:[NSBundle bundleForClass:[self class]]] style:UIBarButtonItemStylePlain target:self action:@selector(showGridAnimated)]];
+//        [items addObject:[[UIBarButtonItem alloc] initWithImage:[UIImage imageForResourcePath:@"MWPhotoBrowser.bundle/UIBarButtonItemGrid" ofType:@"png" inBundle:[NSBundle bundleForClass:[self class]]] style:UIBarButtonItemStylePlain target:self action:@selector(showGridAnimated)]];
     } else {
         [items addObject:fixedSpace];
     }
@@ -259,7 +268,8 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
     } else {
         [items addObject:flexSpace];
     }
-
+    
+    [items addObject:flexSpace];
     // Right - Action
     if (_actionButton && !(!hasItems && !self.navigationItem.rightBarButtonItem)) {
         [items addObject:_actionButton];
@@ -269,24 +279,26 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
             self.navigationItem.rightBarButtonItem = _actionButton;
         [items addObject:fixedSpace];
     }
-
-    // Toolbar visibility
-    [_toolbar setItems:items];
-    BOOL hideToolbar = YES;
-    for (UIBarButtonItem* item in _toolbar.items) {
-        if (item != fixedSpace && item != flexSpace) {
-            hideToolbar = NO;
-            break;
-        }
-    }
-    if (hideToolbar) {
-        [_toolbar removeFromSuperview];
-    } else {
-        [self.view addSubview:_toolbar];
-    }
     
-    // Update nav
-	[self updateNavigation];
+    [self.view addSubview:_toolbar];
+    
+//    // Toolbar visibility
+//    [_toolbar setItems:items];
+//    BOOL hideToolbar = YES;
+//    for (UIBarButtonItem* item in _toolbar.items) {
+//        if (item != fixedSpace && item != flexSpace) {
+//            hideToolbar = NO;
+//            break;
+//        }
+//    }
+//    if (hideToolbar) {
+//        [_toolbar removeFromSuperview];
+//    } else {
+//        [self.view addSubview:_toolbar];
+//    }
+//    
+//    // Update nav
+//	[self updateNavigation];
     
     // Content offset
 	_pagingScrollView.contentOffset = [self contentOffsetForPageAtIndex:_currentPageIndex];
@@ -366,28 +378,37 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
     
     // If rotation occured while we're presenting a modal
     // and the index changed, make sure we show the right one now
-    if (_currentPageIndex != _pageIndexBeforeRotation) {
-        [self jumpToPageAtIndex:_pageIndexBeforeRotation animated:NO];
-    }
+//    if (_currentPageIndex != _pageIndexBeforeRotation) {
+//        [self jumpToPageAtIndex:_pageIndexBeforeRotation animated:NO];
+//    }
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(getNotification:) name:@"back" object:nil];
     
     // Layout
     [self.view setNeedsLayout];
 
 }
 
+#pragma mark -- jump to VR index
+- (void)getNotification:(NSNotification *)notification{
+    NSString *numberStr = notification.object;
+    _currentPageIndex = [numberStr integerValue];
+    [self jumpToPageAtIndex:_currentPageIndex animated:NO];
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     _viewIsActive = YES;
     
-    // Autoplay if first is video
-    if (!_viewHasAppearedInitially) {
-        if (_autoPlayOnAppear) {
-            MWPhoto *photo = [self photoAtIndex:_currentPageIndex];
-            if ([photo respondsToSelector:@selector(isVideo)] && photo.isVideo) {
-                [self playVideoAtIndex:_currentPageIndex];
-            }
-        }
-    }
+//    // Autoplay if first is video
+//    if (!_viewHasAppearedInitially) {
+//        if (_autoPlayOnAppear) {
+//            MWPhoto *photo = [self photoAtIndex:_currentPageIndex];
+//            if ([photo respondsToSelector:@selector(isVideo)] && photo.isVideo) {
+//                [self playVideoAtIndex:_currentPageIndex];
+//            }
+//        }
+//    }
     
     _viewHasAppearedInitially = YES;
         
@@ -442,11 +463,11 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
 - (void)setNavBarAppearance:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     UINavigationBar *navBar = self.navigationController.navigationBar;
-    navBar.tintColor = [UIColor whiteColor];
+    navBar.tintColor = ThemeColor;
     navBar.barTintColor = nil;
     navBar.shadowImage = nil;
     navBar.translucent = YES;
-    navBar.barStyle = UIBarStyleBlackTranslucent;
+//    navBar.barStyle = UIBarStyleBlackTranslucent;
     [navBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
     [navBar setBackgroundImage:nil forBarMetrics:UIBarMetricsLandscapePhone];
 }
@@ -557,41 +578,41 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
     return UIInterfaceOrientationMaskAll;
 }
 
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-    
-	// Remember page index before rotation
-	_pageIndexBeforeRotation = _currentPageIndex;
-	_rotating = YES;
-    
-    // In iOS 7 the nav bar gets shown after rotation, but might as well do this for everything!
-    if ([self areControlsHidden]) {
-        // Force hidden
-        self.navigationController.navigationBarHidden = YES;
-    }
-	
-}
-
-- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-	
-	// Perform layout
-	_currentPageIndex = _pageIndexBeforeRotation;
-	
-	// Delay control holding
-	[self hideControlsAfterDelay];
-    
-    // Layout
-    [self layoutVisiblePages];
-	
-}
-
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
-	_rotating = NO;
-    // Ensure nav bar isn't re-displayed
-    if ([self areControlsHidden]) {
-        self.navigationController.navigationBarHidden = NO;
-        self.navigationController.navigationBar.alpha = 0;
-    }
-}
+//- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+//    
+//	// Remember page index before rotation
+//	_pageIndexBeforeRotation = _currentPageIndex;
+//	_rotating = YES;
+//    
+//    // In iOS 7 the nav bar gets shown after rotation, but might as well do this for everything!
+//    if ([self areControlsHidden]) {
+//        // Force hidden
+//        self.navigationController.navigationBarHidden = YES;
+//    }
+//	
+//}
+//
+//- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+//	
+//	// Perform layout
+//	_currentPageIndex = _pageIndexBeforeRotation;
+//	
+//	// Delay control holding
+//	[self hideControlsAfterDelay];
+//    
+//    // Layout
+//    [self layoutVisiblePages];
+//	
+//}
+//
+//- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+//	_rotating = NO;
+//    // Ensure nav bar isn't re-displayed
+//    if ([self areControlsHidden]) {
+//        self.navigationController.navigationBarHidden = NO;
+//        self.navigationController.navigationBar.alpha = 0;
+//    }
+//}
 
 #pragma mark - Data
 
@@ -1079,43 +1100,89 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
 
 - (void)updateNavigation {
     
-	// Title
-    NSUInteger numberOfPhotos = [self numberOfPhotos];
-    if (_gridController) {
-        if (_gridController.selectionMode) {
-            self.title = NSLocalizedString(@"Select Photos", nil);
-        } else {
-            NSString *photosText;
-            if (numberOfPhotos == 1) {
-                photosText = NSLocalizedString(@"photo", @"Used in the context: '1 photo'");
-            } else {
-                photosText = NSLocalizedString(@"photos", @"Used in the context: '3 photos'");
-            }
-            self.title = [NSString stringWithFormat:@"%lu %@", (unsigned long)numberOfPhotos, photosText];
+    if (_displayActionButton) {
+        NSDateComponents *components = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:[NSDate date]];
+        NSUInteger year  = [components year];
+        NSString *time;
+        NSString *date;
+        
+        MWPhoto *photo = _photos[_currentPageIndex];
+        PHAsset *asset = photo.asset;
+        NSDictionary *dateDict = self.imageDateDict;
+        NSString *imageDate = [dateDict objectForKey:[NSString stringWithFormat:@"%@",asset.localIdentifier]];
+        NSRange range1 = [imageDate rangeOfString:@"日"];
+        NSString *imageyear = [imageDate substringToIndex:4];
+        // judge this year
+        if (imageyear == [NSString stringWithFormat:@"%lu",(unsigned long)year]) {
+            NSString *noyear = [imageDate substringToIndex:range1.location + 1];
+            date = [noyear substringFromIndex:3];
+        }else{
+            date = [imageDate substringToIndex:range1.location + 1];
         }
-    } else if (numberOfPhotos > 1) {
-        if ([_delegate respondsToSelector:@selector(photoBrowser:titleForPhotoAtIndex:)]) {
-            self.title = [_delegate photoBrowser:self titleForPhotoAtIndex:_currentPageIndex];
-        } else {
-            self.title = [NSString stringWithFormat:@"%lu %@ %lu", (unsigned long)(_currentPageIndex+1), NSLocalizedString(@"of", @"Used in the context: 'Showing 1 of 3 items'"), (unsigned long)numberOfPhotos];
+        // judge morning or afternoon
+        time = [imageDate substringFromIndex:range1.location + 1];
+        NSString *morningOr = [time substringToIndex:2];
+        NSInteger morningOrInt = [morningOr integerValue];
+        if (morningOrInt > 12) {
+            NSString *min = [time substringFromIndex:2];
+            time = [NSString stringWithFormat:@"下午%ld%@",(unsigned long)morningOrInt-12, min];
+        }else{
+            time = [NSString stringWithFormat:@"上午%@",time];
         }
-	} else {
-		self.title = nil;
-	}
-	
-	// Buttons
-	_previousButton.enabled = (_currentPageIndex > 0);
-	_nextButton.enabled = (_currentPageIndex < numberOfPhotos - 1);
-    
-    // Disable action button if there is no image or it's a video
-    MWPhoto *photo = [self photoAtIndex:_currentPageIndex];
-    if ([photo underlyingImage] == nil || ([photo respondsToSelector:@selector(isVideo)] && photo.isVideo)) {
-        _actionButton.enabled = NO;
-        _actionButton.tintColor = [UIColor clearColor]; // Tint to hide button
-    } else {
-        _actionButton.enabled = YES;
-        _actionButton.tintColor = nil;
+        
+        NSString *attrStr = [NSString stringWithFormat:@"%@\n%@",date,time];
+        NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:attrStr];
+        NSRange range2 = [attrStr rangeOfString:time];
+        [attributedString addAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:12], NSForegroundColorAttributeName: [UIColor colorWithHex:0x333333]} range:range2];
+        UILabel *titleLabel = [[UILabel alloc] init];
+        titleLabel.text = time;
+        titleLabel.textColor = [UIColor colorWithHex:0x333333];
+        titleLabel.font = [UIFont systemFontOfSize:14];
+        titleLabel.numberOfLines = 0;
+        titleLabel.textAlignment = NSTextAlignmentCenter;
+        titleLabel. attributedText = attributedString;
+        [titleLabel sizeToFit];
+        self.navigationItem.titleView = titleLabel;
+        self.navigationItem.titleView.frame = CGRectMake((ScreenWidth - self.navigationItem.titleView.frame.size.width) / 2, (44 - self.navigationItem.titleView.frame.size.height) / 2, self.navigationItem.titleView.frame.size.width, self.navigationItem.titleView.frame.size.height);
     }
+    
+//	// Title
+//    NSUInteger numberOfPhotos = [self numberOfPhotos];
+//    if (_gridController) {
+//        if (_gridController.selectionMode) {
+//            self.title = NSLocalizedString(@"Select Photos", nil);
+//        } else {
+//            NSString *photosText;
+//            if (numberOfPhotos == 1) {
+//                photosText = NSLocalizedString(@"photo", @"Used in the context: '1 photo'");
+//            } else {
+//                photosText = NSLocalizedString(@"photos", @"Used in the context: '3 photos'");
+//            }
+//            self.title = [NSString stringWithFormat:@"%lu %@", (unsigned long)numberOfPhotos, photosText];
+//        }
+//    } else if (numberOfPhotos > 1) {
+//        if ([_delegate respondsToSelector:@selector(photoBrowser:titleForPhotoAtIndex:)]) {
+//            self.title = [_delegate photoBrowser:self titleForPhotoAtIndex:_currentPageIndex];
+//        } else {
+//            self.title = [NSString stringWithFormat:@"%lu %@ %lu", (unsigned long)(_currentPageIndex+1), NSLocalizedString(@"of", @"Used in the context: 'Showing 1 of 3 items'"), (unsigned long)numberOfPhotos];
+//        }
+//	} else {
+//		self.title = nil;
+//	}
+//	
+//	// Buttons
+//	_previousButton.enabled = (_currentPageIndex > 0);
+//	_nextButton.enabled = (_currentPageIndex < numberOfPhotos - 1);
+//    
+//    // Disable action button if there is no image or it's a video
+//    MWPhoto *photo = [self photoAtIndex:_currentPageIndex];
+//    if ([photo underlyingImage] == nil || ([photo respondsToSelector:@selector(isVideo)] && photo.isVideo)) {
+//        _actionButton.enabled = NO;
+//        _actionButton.tintColor = [UIColor clearColor]; // Tint to hide button
+//    } else {
+//        _actionButton.enabled = YES;
+//        _actionButton.tintColor = nil;
+//    }
 	
 }
 
@@ -1298,7 +1365,30 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
         _currentVideoLoadingIndicator.center = CGPointMake(CGRectGetMidX(frame), CGRectGetMidY(frame));
     }
 }
-
+#pragma mark - VR预览
+- (void)previewVr{
+//    WDJLocalVRController *wdjlVRController = [[WDJLocalVRController alloc]init];
+//    //    NSMutableArray *imgArr = [[NSMutableArray alloc]init];
+//    
+//    MWPhoto *photo = _photos[_currentPageIndex];
+//    __block UIImage *image;
+//    PHAsset *asset = photo.asset;
+//    
+//    PHImageManager *manager = [[PHImageManager alloc]init];
+//    PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
+//    [options setSynchronous:YES]; // called exactly once
+//    [manager requestImageForAsset:asset targetSize:CGSizeMake(2000, 2000) contentMode:PHImageContentModeAspectFit options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+//        image = result;
+//    }];
+//    PHAssetResource *resource = [[PHAssetResource assetResourcesForAsset:asset] firstObject];
+//    wdjlVRController.imageName = [resource.originalFilename stringByDeletingPathExtension];
+//    wdjlVRController.canShare = ![self judgeWith:asset.localIdentifier];
+//    wdjlVRController.image = image;
+//    wdjlVRController.dataSource = [NSMutableArray arrayWithArray:self.dataSource];
+//    wdjlVRController.currentPage = (int)_currentPageIndex;
+//    //    [self presentViewController:wdjlVRController animated:YES completion:nil];
+//    [self.navigationController pushViewController:wdjlVRController animated:YES];
+}
 #pragma mark - Grid
 
 - (void)showGridAnimated {
