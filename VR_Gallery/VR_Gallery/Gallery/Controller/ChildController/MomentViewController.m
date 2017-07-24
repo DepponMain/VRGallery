@@ -48,7 +48,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectSection:) name:@"sectionDidSelected" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deselectSection:) name:@"sectionDidDeselected" object:nil];
 }
-
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     if ([[ImageDataAPI sharedInstance] haveAccessToPhotos]){
@@ -60,7 +59,6 @@
         });
     }
 }
-
 -(void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
@@ -203,9 +201,11 @@
 
 #pragma mark -- Action
 - (void)selectBtnClick{
+    self.momentView.frame = CGRectMake(0, 0, ScreenWidth, self.momentView.frame.size.height - ToolbarHeight);
     self.dataSource.isEdit = YES; self.isEdit = YES; self.momentView.allowsMultipleSelection = YES; [self.momentView reloadData];
 }
 - (void)cancleBtnClick{
+    self.momentView.frame = CGRectMake(0, 0, ScreenWidth, self.momentView.frame.size.height + ToolbarHeight);
     self.dataSource.isEdit = NO; self.isEdit = NO; [self.selectedDict removeAllObjects]; [self.selectAssetDict removeAllObjects]; [self.dataSource.selectSections removeAllObjects]; [self.momentView reloadData];
 }
 - (void)selectAllBtnClick{
