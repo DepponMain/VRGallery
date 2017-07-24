@@ -47,6 +47,8 @@
 		5C1B23201F20C2E000FACE64 /* AlbumPhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B231F1F20C2E000FACE64 /* AlbumPhotoController.m */; };
 		5C5F289A1F219844008A92EA /* AlbumPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F28991F219844008A92EA /* AlbumPhotoCell.m */; };
 		5C5F289D1F21E0DB008A92EA /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F289C1F21E0DB008A92EA /* CustomButton.m */; };
+		5CC5011F1F25BDDE00A2E06E /* VRPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC5011E1F25BDDE00A2E06E /* VRPreviewController.m */; };
+		5CC501221F25C9F400A2E06E /* ToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC501211F25C9F400A2E06E /* ToolBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,6 +133,10 @@
 		5C5F28991F219844008A92EA /* AlbumPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumPhotoCell.m; sourceTree = "<group>"; };
 		5C5F289B1F21E0DB008A92EA /* CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
 		5C5F289C1F21E0DB008A92EA /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomButton.m; sourceTree = "<group>"; };
+		5CC5011D1F25BDDE00A2E06E /* VRPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VRPreviewController.h; sourceTree = "<group>"; };
+		5CC5011E1F25BDDE00A2E06E /* VRPreviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VRPreviewController.m; sourceTree = "<group>"; };
+		5CC501201F25C9F400A2E06E /* ToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolBar.h; sourceTree = "<group>"; };
+		5CC501211F25C9F400A2E06E /* ToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolBar.m; sourceTree = "<group>"; };
 		E9A8A98313CE426FEDB01065 /* libPods-VR_Gallery.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VR_Gallery.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F205431E903014D09100CD0E /* Pods-VR_Gallery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VR_Gallery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VR_Gallery/Pods-VR_Gallery.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,6 +177,7 @@
 				5C1B229C1F1F4C0B00FACE64 /* Application */,
 				5C1B22A11F204AB000FACE64 /* Extension */,
 				5C1B22CC1F204D0D00FACE64 /* Gallery */,
+				5CC5011A1F25BD8F00A2E06E /* VR_Preview */,
 				5C1B22A51F204B1600FACE64 /* Vendor */,
 				5C1B22851F1F4BB700FACE64 /* Supporting Files */,
 			);
@@ -371,6 +378,33 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		5CC5011A1F25BD8F00A2E06E /* VR_Preview */ = {
+			isa = PBXGroup;
+			children = (
+				5CC5011B1F25BDC000A2E06E /* Controller */,
+				5CC5011C1F25BDC000A2E06E /* View */,
+			);
+			path = VR_Preview;
+			sourceTree = "<group>";
+		};
+		5CC5011B1F25BDC000A2E06E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5CC5011D1F25BDDE00A2E06E /* VRPreviewController.h */,
+				5CC5011E1F25BDDE00A2E06E /* VRPreviewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5CC5011C1F25BDC000A2E06E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5CC501201F25C9F400A2E06E /* ToolBar.h */,
+				5CC501211F25C9F400A2E06E /* ToolBar.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8C7ADDC1275EE367D1AE2EC4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -523,6 +557,7 @@
 				5C1B22F11F205A4E00FACE64 /* MomentModel.m in Sources */,
 				5C1B22C41F204B1F00FACE64 /* MWGridCell.m in Sources */,
 				5C1B22DC1F204FF400FACE64 /* MomentFlowLayout.m in Sources */,
+				5CC501221F25C9F400A2E06E /* ToolBar.m in Sources */,
 				5C1B22C91F204B1F00FACE64 /* MWTapDetectingView.m in Sources */,
 				5C1B22C51F204B1F00FACE64 /* MWGridViewController.m in Sources */,
 				5C1B22F41F205A6800FACE64 /* VRMomentModel.m in Sources */,
@@ -548,6 +583,7 @@
 				5C1B230F1F207CEF00FACE64 /* MomentViewController.m in Sources */,
 				5C1B23061F20627900FACE64 /* GalleryViewController.m in Sources */,
 				5C1B22DF1F2051A400FACE64 /* EmptySegue.m in Sources */,
+				5CC5011F1F25BDDE00A2E06E /* VRPreviewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

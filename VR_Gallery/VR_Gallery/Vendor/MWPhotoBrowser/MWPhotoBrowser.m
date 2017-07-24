@@ -13,6 +13,7 @@
 #import "SDImageCache.h"
 #import "UIImage+MWPhotoBrowser.h"
 #import "CustomButton.h"
+#import "VRPreviewController.h"
 
 #define PADDING                  10
 
@@ -575,7 +576,7 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskAll;
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 //- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
@@ -1365,29 +1366,27 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
         _currentVideoLoadingIndicator.center = CGPointMake(CGRectGetMidX(frame), CGRectGetMidY(frame));
     }
 }
-#pragma mark - VR预览
+
+#pragma mark - VR_Preview
 - (void)previewVr{
-//    WDJLocalVRController *wdjlVRController = [[WDJLocalVRController alloc]init];
-//    //    NSMutableArray *imgArr = [[NSMutableArray alloc]init];
-//    
-//    MWPhoto *photo = _photos[_currentPageIndex];
-//    __block UIImage *image;
-//    PHAsset *asset = photo.asset;
-//    
-//    PHImageManager *manager = [[PHImageManager alloc]init];
-//    PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
-//    [options setSynchronous:YES]; // called exactly once
-//    [manager requestImageForAsset:asset targetSize:CGSizeMake(2000, 2000) contentMode:PHImageContentModeAspectFit options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
-//        image = result;
-//    }];
-//    PHAssetResource *resource = [[PHAssetResource assetResourcesForAsset:asset] firstObject];
-//    wdjlVRController.imageName = [resource.originalFilename stringByDeletingPathExtension];
-//    wdjlVRController.canShare = ![self judgeWith:asset.localIdentifier];
-//    wdjlVRController.image = image;
-//    wdjlVRController.dataSource = [NSMutableArray arrayWithArray:self.dataSource];
-//    wdjlVRController.currentPage = (int)_currentPageIndex;
-//    //    [self presentViewController:wdjlVRController animated:YES completion:nil];
-//    [self.navigationController pushViewController:wdjlVRController animated:YES];
+    VRPreviewController *previewVR = [[VRPreviewController alloc]init];
+    
+    MWPhoto *photo = _photos[_currentPageIndex];
+    __block UIImage *image;
+    PHAsset *asset = photo.asset;
+    
+    PHImageManager *manager = [[PHImageManager alloc]init];
+    PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
+    [options setSynchronous:YES]; // called exactly once
+    [manager requestImageForAsset:asset targetSize:CGSizeMake(2000, 1000) contentMode:PHImageContentModeAspectFit options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+        image = result;
+    }];
+    PHAssetResource *resource = [[PHAssetResource assetResourcesForAsset:asset] firstObject];
+    previewVR.imageName = [resource.originalFilename stringByDeletingPathExtension];
+    previewVR.image = image;
+    previewVR.dataSource = [NSMutableArray arrayWithArray:self.dataSource];
+    previewVR.currentPage = (NSInteger)_currentPageIndex;
+    [self.navigationController pushViewController:previewVR animated:YES];
 }
 #pragma mark - Grid
 

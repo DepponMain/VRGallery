@@ -8,12 +8,27 @@
 
 #import "AppDelegate.h"
 
+static AppDelegate *_appDelegate;
+
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window{
+    if (_allowRotation == 3) {
+        return UIInterfaceOrientationMaskAll;
+    }else if(_allowRotation == 4){
+        return UIInterfaceOrientationMaskLandscapeRight;
+    }else{
+        return UIInterfaceOrientationMaskPortrait;
+    }
+}
+
++ (AppDelegate *)appDelegate {
+    return _appDelegate;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.

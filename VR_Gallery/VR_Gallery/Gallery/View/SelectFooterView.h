@@ -12,6 +12,6 @@ typedef void(^deleteBlock)();
 
 @interface SelectFooterView : UIView
 
-@property(nonatomic,copy)deleteBlock block;
+@property (nonatomic, copy) deleteBlock block;
 
 @end
