@@ -21,11 +21,6 @@
     [self.view setBackgroundColor:[UIColor whiteColor]];
     serialPGQueue = dispatch_queue_create("com.rylan", DISPATCH_QUEUE_SERIAL);
     
-    if ([[UIDevice currentDevice].systemVersion floatValue] >= 7.0f){
-        [self setEdgesForExtendedLayout:UIRectEdgeNone];
-        [self setAutomaticallyAdjustsScrollViewInsets:NO];
-    }
-    
     // prevent user action before viewDidApperar
     [self.navigationController.view setUserInteractionEnabled:NO];
     

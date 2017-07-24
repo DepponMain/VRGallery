@@ -69,8 +69,8 @@
 - (void)loadMomentView{
     MomentFlowLayout *layout = (MomentFlowLayout *)[self.momentView collectionViewLayout];
     [layout setItemSize:PHOTO_LIST_SIZE];
-    layout.minimumLineSpacing = 17.0 * Pt;
-    layout.minimumInteritemSpacing = 17.0 * Pt;
+    layout.minimumLineSpacing = 5.0 * Pt;
+    layout.minimumInteritemSpacing = 5.0 * Pt;
     layout.sectionHeadersPinToVisibleBounds = YES;
     [layout setHeaderReferenceSize:CGSizeMake(ScreenWidth, 105.0 * Pt)];
     
@@ -93,9 +93,8 @@
     
     MomentDataSource *pDataSource = [[MomentDataSource alloc] initWithCellIdentifier:@"MomentCell" headerIdentifier:@"MomentHeader" configureCellBlock:configureCell];
     self.momentView.dataSource = pDataSource;
-    self.momentView.bounces = YES;
     self.momentView.backgroundColor = [UIColor colorWithHex:0xeeeeee];
-    self.momentView.contentInset = UIEdgeInsetsMake(0, 17.0 * Pt, 0, 17.0 * Pt);
+    self.momentView.contentInset = UIEdgeInsetsMake(0, 6.0 * Pt, 0, 6.0 * Pt);
     [self setDataSource:pDataSource];
 }
 

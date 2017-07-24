@@ -15,7 +15,6 @@
 
 @property (nonatomic, weak) UICollectionView *collectionView;
 @property (nonatomic, assign) CGFloat margin;
-@property (nonatomic, assign) CGFloat size;
 
 @property (nonatomic, strong) NSMutableArray *photos;
 @property (nonatomic, strong) NSMutableArray *thumbs;
@@ -27,8 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.margin = 17.0 * Pt;
-    self.size = (ScreenWidth - 5 * _margin - 0.5) / 4;
+    self.margin = 5.0 * Pt;
     
     self.title = _albumObj.name;
     [self crateCollectionView];
@@ -126,7 +124,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     AlbumPhotoCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"albumPhotoCell" forIndexPath:indexPath];
     PHAsset *asset = self.albumObj.collection[indexPath.item];
-    [[ImageDataAPI sharedInstance] getThumbnailForAssetObj:asset withSize:CGSizeMake(_size, _size) completion:^(BOOL ret, UIImage *image){
+    [[ImageDataAPI sharedInstance] getThumbnailForAssetObj:asset withSize:PHOTO_LIST_SIZE completion:^(BOOL ret, UIImage *image){
         [cell configureForImage:image];
     }];
     return cell;
@@ -138,7 +136,7 @@
     layout.minimumLineSpacing = _margin;
     layout.minimumInteritemSpacing = _margin;
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
-    layout.itemSize = CGSizeMake(_size, _size);
+    layout.itemSize = PHOTO_LIST_SIZE;
     
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height) collectionViewLayout:layout];
     self.collectionView = collectionView;
@@ -146,7 +144,7 @@
     collectionView.delegate = self;
     collectionView.dataSource = self;
     [collectionView registerClass:[AlbumPhotoCell class] forCellWithReuseIdentifier:@"albumPhotoCell"];
-    collectionView.showsVerticalScrollIndicator = YES;
+    collectionView.showsVerticalScrollIndicator = NO;
     collectionView.showsHorizontalScrollIndicator = NO;
     collectionView.backgroundColor = [UIColor colorWithHex:0xeeeeee];
     [self.view addSubview:collectionView];

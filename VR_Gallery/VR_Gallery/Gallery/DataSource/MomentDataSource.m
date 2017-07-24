@@ -53,7 +53,7 @@
         [headerView addGestureRecognizer:tapGes];
         
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 105.0 * Pt)];
-        [view setBackgroundColor:[UIColor colorWithHex:0xeeeeee]];
+        [view setBackgroundColor:[UIColor colorWithHex:0xf5f5f5]];
         
         UILabel *label = [[UILabel alloc] init];
         [label setBackgroundColor:[UIColor clearColor]];

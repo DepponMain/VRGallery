@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ImageDataAPI.h"
 
-#define PHOTO_LIST_SIZE CGSizeMake((ScreenWidth - 5 * 17.0 * Pt - 0.5) / 4, (ScreenWidth - 5 * 17.0 * Pt - 0.5) / 4)
+#define PHOTO_LIST_SIZE CGSizeMake((ScreenWidth - 5 * 6.0 * Pt) / 4, (ScreenWidth - 5 * 6.0 * Pt) / 4)
 
 @interface BaseViewController : UIViewController
 {

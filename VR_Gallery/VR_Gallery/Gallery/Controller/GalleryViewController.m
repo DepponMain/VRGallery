@@ -182,9 +182,6 @@
     
     [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:NavigationTitleFont], NSForegroundColorAttributeName: ThemeColor} forState:UIControlStateNormal];
     
-    self.navigationController.navigationBar.translucent = NO;
-    self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
-    
     self.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"gallery_moment"] style:UIBarButtonItemStylePlain target:self action:@selector(leftBarButtonItemClick:)];
     
     [self.navigationItem setLeftBarButtonItem:self.leftBarButtonItem animated:YES];
