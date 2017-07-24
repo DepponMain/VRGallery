@@ -194,7 +194,7 @@
 #pragma mark --Lazy
 - (SelectFooterView *)selectFooter{
     if (!_selectFooter) {
-        SelectFooterView *selectFooter = [[SelectFooterView alloc] initWithFrame:CGRectMake(0, ScreenHeight - NavigationHeight - TabbarHeight, ScreenWidth, TabbarHeight)];
+        SelectFooterView *selectFooter = [[SelectFooterView alloc] initWithFrame:CGRectMake(0, ScreenHeight -ToolbarHeight, ScreenWidth, ToolbarHeight)];
         _selectFooter = selectFooter;
         _selectFooter.block = ^(){
             [self deleteBtnClick];

@@ -28,5 +28,4 @@
 #define NavigationTitleFont 47.0 * Pt
 #define ThemeColor [UIColor colorWithHex:0x5ab1e6]
 
-#define NavigationHeight 64
-#define TabbarHeight 49
+#define ToolbarHeight 45

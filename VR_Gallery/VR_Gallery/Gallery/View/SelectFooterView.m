@@ -21,13 +21,17 @@
 - (void)setupUI{
     self.backgroundColor = [UIColor whiteColor];
     
+    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 0.7)];
+    line.backgroundColor = [UIColor colorWithHex:0x999999];
+    [self addSubview:line];
+    
     UIButton *deleteBtn = [[UIButton alloc] init];
     [self addSubview:deleteBtn];
     [deleteBtn setImage:[UIImage imageNamed:@"gallery_delete"] forState:UIControlStateNormal];
     [deleteBtn addTarget:self action:@selector(deleteBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [deleteBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.height.centerY.equalTo(self);
-        make.width.offset(100);
+        make.width.offset(90);
     }];
 }
 
