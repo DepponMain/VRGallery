@@ -47,6 +47,34 @@
 		5C1B23201F20C2E000FACE64 /* AlbumPhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B231F1F20C2E000FACE64 /* AlbumPhotoController.m */; };
 		5C5F289A1F219844008A92EA /* AlbumPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F28991F219844008A92EA /* AlbumPhotoCell.m */; };
 		5C5F289D1F21E0DB008A92EA /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F289C1F21E0DB008A92EA /* CustomButton.m */; };
+		5C89A4B41F28621F00732EE6 /* GLUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C89A4851F28621F00732EE6 /* GLUtil.m */; };
+		5C89A4B51F28621F00732EE6 /* MD360Director.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C89A4871F28621F00732EE6 /* MD360Director.m */; };
+		5C89A4B61F28621F00732EE6 /* MD360Program.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C89A4891F28621F00732EE6 /* MD360Program.m */; };
+		5C89A4B71F28621F00732EE6 /* MD360Renderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C89A48B1F28621F00732EE6 /* MD360Renderer.m */; };
+		5C89A4B81F28621F00732EE6 /* MD360Texture.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C89A48D1F28621F00732EE6 /* MD360Texture.m */; };
+		5C89A4B91F28621F00732EE6 /* MDAbsObject3D.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C89A48F1F28621F00732EE6 /* MDAbsObject3D.m */; };
+		5C89A4BA1F28621F00732EE6 /* MDDisplayStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C89A4911F28621F00732EE6 /* MDDisplayStrategy.m */; };
+		5C89A4BB1F28621F00732EE6 /* MDDome3D.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C89A4921F28621F00732EE6 /* MDDome3D.m */; };
+		5C89A4BC1F28621F00732EE6 /* MDGLKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C89A4951F28621F00732EE6 /* MDGLKViewController.m */; };
+		5C89A4BD1F28621F00732EE6 /* MDIJKAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C89A4971F28621F00732EE6 /* MDIJKAdapter.m */; };
+		5C89A4BE1F28621F00732EE6 /* MDInteractiveStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C89A4991F28621F00732EE6 /* MDInteractiveStrategy.m */; };
+		5C89A4BF1F28621F00732EE6 /* MDModeStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C89A49B1F28621F00732EE6 /* MDModeStrategy.m */; };
+		5C89A4C01F28621F00732EE6 /* MDObject3DHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C89A49D1F28621F00732EE6 /* MDObject3DHelper.m */; };
+		5C89A4C11F28621F00732EE6 /* MDPlane.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C89A49E1F28621F00732EE6 /* MDPlane.m */; };
+		5C89A4C21F28621F00732EE6 /* MDPlaneScaleCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C89A4A01F28621F00732EE6 /* MDPlaneScaleCalculator.m */; };
+		5C89A4C31F28621F00732EE6 /* MDProjectionStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C89A4A21F28621F00732EE6 /* MDProjectionStrategy.m */; };
+		5C89A4C41F28621F00732EE6 /* MDRGBABitmapTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C89A4A31F28621F00732EE6 /* MDRGBABitmapTexture.m */; };
+		5C89A4C51F28621F00732EE6 /* MDRGBAProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C89A4A41F28621F00732EE6 /* MDRGBAProgram.m */; };
+		5C89A4C61F28621F00732EE6 /* MDRGBAVideoTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C89A4A51F28621F00732EE6 /* MDRGBAVideoTexture.m */; };
+		5C89A4C71F28621F00732EE6 /* MDSphere3D.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C89A4A61F28621F00732EE6 /* MDSphere3D.m */; };
+		5C89A4C81F28621F00732EE6 /* MDStereoSphere3D.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C89A4A71F28621F00732EE6 /* MDStereoSphere3D.m */; };
+		5C89A4C91F28621F00732EE6 /* MDTouchHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C89A4A91F28621F00732EE6 /* MDTouchHelper.m */; };
+		5C89A4CA1F28621F00732EE6 /* MDVideoDataAdatperAVPlayerImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C89A4AC1F28621F00732EE6 /* MDVideoDataAdatperAVPlayerImpl.m */; };
+		5C89A4CB1F28621F00732EE6 /* MDVideoFrameAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C89A4AD1F28621F00732EE6 /* MDVideoFrameAdapter.m */; };
+		5C89A4CC1F28621F00732EE6 /* MDVRLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C89A4B01F28621F00732EE6 /* MDVRLibrary.m */; };
+		5C89A4CD1F28621F00732EE6 /* MDYUV420PProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C89A4B11F28621F00732EE6 /* MDYUV420PProgram.m */; };
+		5C89A4CE1F28621F00732EE6 /* MDYUV420PVideoTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C89A4B21F28621F00732EE6 /* MDYUV420PVideoTexture.m */; };
+		5C89A4CF1F28621F00732EE6 /* vrlibraw.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5C89A4B31F28621F00732EE6 /* vrlibraw.bundle */; };
 		5CC5011F1F25BDDE00A2E06E /* VRPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC5011E1F25BDDE00A2E06E /* VRPreviewController.m */; };
 		5CC501221F25C9F400A2E06E /* ToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CC501211F25C9F400A2E06E /* ToolBar.m */; };
 /* End PBXBuildFile section */
@@ -133,6 +161,54 @@
 		5C5F28991F219844008A92EA /* AlbumPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumPhotoCell.m; sourceTree = "<group>"; };
 		5C5F289B1F21E0DB008A92EA /* CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
 		5C5F289C1F21E0DB008A92EA /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomButton.m; sourceTree = "<group>"; };
+		5C89A4841F28621F00732EE6 /* GLUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLUtil.h; sourceTree = "<group>"; };
+		5C89A4851F28621F00732EE6 /* GLUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLUtil.m; sourceTree = "<group>"; };
+		5C89A4861F28621F00732EE6 /* MD360Director.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD360Director.h; sourceTree = "<group>"; };
+		5C89A4871F28621F00732EE6 /* MD360Director.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD360Director.m; sourceTree = "<group>"; };
+		5C89A4881F28621F00732EE6 /* MD360Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD360Program.h; sourceTree = "<group>"; };
+		5C89A4891F28621F00732EE6 /* MD360Program.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD360Program.m; sourceTree = "<group>"; };
+		5C89A48A1F28621F00732EE6 /* MD360Renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD360Renderer.h; sourceTree = "<group>"; };
+		5C89A48B1F28621F00732EE6 /* MD360Renderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD360Renderer.m; sourceTree = "<group>"; };
+		5C89A48C1F28621F00732EE6 /* MD360Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD360Texture.h; sourceTree = "<group>"; };
+		5C89A48D1F28621F00732EE6 /* MD360Texture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MD360Texture.m; sourceTree = "<group>"; };
+		5C89A48E1F28621F00732EE6 /* MDAbsObject3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDAbsObject3D.h; sourceTree = "<group>"; };
+		5C89A48F1F28621F00732EE6 /* MDAbsObject3D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDAbsObject3D.m; sourceTree = "<group>"; };
+		5C89A4901F28621F00732EE6 /* MDDisplayStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDDisplayStrategy.h; sourceTree = "<group>"; };
+		5C89A4911F28621F00732EE6 /* MDDisplayStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDDisplayStrategy.m; sourceTree = "<group>"; };
+		5C89A4921F28621F00732EE6 /* MDDome3D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDDome3D.m; sourceTree = "<group>"; };
+		5C89A4931F28621F00732EE6 /* MDExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDExt.h; sourceTree = "<group>"; };
+		5C89A4941F28621F00732EE6 /* MDGLKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDGLKViewController.h; sourceTree = "<group>"; };
+		5C89A4951F28621F00732EE6 /* MDGLKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDGLKViewController.m; sourceTree = "<group>"; };
+		5C89A4961F28621F00732EE6 /* MDGLRendererDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDGLRendererDelegate.h; sourceTree = "<group>"; };
+		5C89A4971F28621F00732EE6 /* MDIJKAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDIJKAdapter.m; sourceTree = "<group>"; };
+		5C89A4981F28621F00732EE6 /* MDInteractiveStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDInteractiveStrategy.h; sourceTree = "<group>"; };
+		5C89A4991F28621F00732EE6 /* MDInteractiveStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDInteractiveStrategy.m; sourceTree = "<group>"; };
+		5C89A49A1F28621F00732EE6 /* MDModeStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDModeStrategy.h; sourceTree = "<group>"; };
+		5C89A49B1F28621F00732EE6 /* MDModeStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDModeStrategy.m; sourceTree = "<group>"; };
+		5C89A49C1F28621F00732EE6 /* MDObject3DHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDObject3DHelper.h; sourceTree = "<group>"; };
+		5C89A49D1F28621F00732EE6 /* MDObject3DHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDObject3DHelper.m; sourceTree = "<group>"; };
+		5C89A49E1F28621F00732EE6 /* MDPlane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDPlane.m; sourceTree = "<group>"; };
+		5C89A49F1F28621F00732EE6 /* MDPlaneScaleCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDPlaneScaleCalculator.h; sourceTree = "<group>"; };
+		5C89A4A01F28621F00732EE6 /* MDPlaneScaleCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDPlaneScaleCalculator.m; sourceTree = "<group>"; };
+		5C89A4A11F28621F00732EE6 /* MDProjectionStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDProjectionStrategy.h; sourceTree = "<group>"; };
+		5C89A4A21F28621F00732EE6 /* MDProjectionStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDProjectionStrategy.m; sourceTree = "<group>"; };
+		5C89A4A31F28621F00732EE6 /* MDRGBABitmapTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRGBABitmapTexture.m; sourceTree = "<group>"; };
+		5C89A4A41F28621F00732EE6 /* MDRGBAProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRGBAProgram.m; sourceTree = "<group>"; };
+		5C89A4A51F28621F00732EE6 /* MDRGBAVideoTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDRGBAVideoTexture.m; sourceTree = "<group>"; };
+		5C89A4A61F28621F00732EE6 /* MDSphere3D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSphere3D.m; sourceTree = "<group>"; };
+		5C89A4A71F28621F00732EE6 /* MDStereoSphere3D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDStereoSphere3D.m; sourceTree = "<group>"; };
+		5C89A4A81F28621F00732EE6 /* MDTouchHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDTouchHelper.h; sourceTree = "<group>"; };
+		5C89A4A91F28621F00732EE6 /* MDTouchHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDTouchHelper.m; sourceTree = "<group>"; };
+		5C89A4AA1F28621F00732EE6 /* MDVideoDataAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDVideoDataAdapter.h; sourceTree = "<group>"; };
+		5C89A4AB1F28621F00732EE6 /* MDVideoDataAdatperAVPlayerImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDVideoDataAdatperAVPlayerImpl.h; sourceTree = "<group>"; };
+		5C89A4AC1F28621F00732EE6 /* MDVideoDataAdatperAVPlayerImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDVideoDataAdatperAVPlayerImpl.m; sourceTree = "<group>"; };
+		5C89A4AD1F28621F00732EE6 /* MDVideoFrameAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDVideoFrameAdapter.m; sourceTree = "<group>"; };
+		5C89A4AE1F28621F00732EE6 /* MDVRHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDVRHeader.h; sourceTree = "<group>"; };
+		5C89A4AF1F28621F00732EE6 /* MDVRLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDVRLibrary.h; sourceTree = "<group>"; };
+		5C89A4B01F28621F00732EE6 /* MDVRLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDVRLibrary.m; sourceTree = "<group>"; };
+		5C89A4B11F28621F00732EE6 /* MDYUV420PProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDYUV420PProgram.m; sourceTree = "<group>"; };
+		5C89A4B21F28621F00732EE6 /* MDYUV420PVideoTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDYUV420PVideoTexture.m; sourceTree = "<group>"; };
+		5C89A4B31F28621F00732EE6 /* vrlibraw.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = vrlibraw.bundle; sourceTree = "<group>"; };
 		5CC5011D1F25BDDE00A2E06E /* VRPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VRPreviewController.h; sourceTree = "<group>"; };
 		5CC5011E1F25BDDE00A2E06E /* VRPreviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VRPreviewController.m; sourceTree = "<group>"; };
 		5CC501201F25C9F400A2E06E /* ToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolBar.h; sourceTree = "<group>"; };
@@ -219,8 +295,9 @@
 		5C1B22A51F204B1600FACE64 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				5C1B22A61F204B1F00FACE64 /* DACircularProgress */,
+				5C89A4831F28621F00732EE6 /* MDVRLibrary */,
 				5C1B22AB1F204B1F00FACE64 /* MWPhotoBrowser */,
+				5C1B22A61F204B1F00FACE64 /* DACircularProgress */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
@@ -378,6 +455,61 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		5C89A4831F28621F00732EE6 /* MDVRLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				5C89A4841F28621F00732EE6 /* GLUtil.h */,
+				5C89A4851F28621F00732EE6 /* GLUtil.m */,
+				5C89A4861F28621F00732EE6 /* MD360Director.h */,
+				5C89A4871F28621F00732EE6 /* MD360Director.m */,
+				5C89A4881F28621F00732EE6 /* MD360Program.h */,
+				5C89A4891F28621F00732EE6 /* MD360Program.m */,
+				5C89A48A1F28621F00732EE6 /* MD360Renderer.h */,
+				5C89A48B1F28621F00732EE6 /* MD360Renderer.m */,
+				5C89A48C1F28621F00732EE6 /* MD360Texture.h */,
+				5C89A48D1F28621F00732EE6 /* MD360Texture.m */,
+				5C89A48E1F28621F00732EE6 /* MDAbsObject3D.h */,
+				5C89A48F1F28621F00732EE6 /* MDAbsObject3D.m */,
+				5C89A4901F28621F00732EE6 /* MDDisplayStrategy.h */,
+				5C89A4911F28621F00732EE6 /* MDDisplayStrategy.m */,
+				5C89A4921F28621F00732EE6 /* MDDome3D.m */,
+				5C89A4931F28621F00732EE6 /* MDExt.h */,
+				5C89A4941F28621F00732EE6 /* MDGLKViewController.h */,
+				5C89A4951F28621F00732EE6 /* MDGLKViewController.m */,
+				5C89A4961F28621F00732EE6 /* MDGLRendererDelegate.h */,
+				5C89A4971F28621F00732EE6 /* MDIJKAdapter.m */,
+				5C89A4981F28621F00732EE6 /* MDInteractiveStrategy.h */,
+				5C89A4991F28621F00732EE6 /* MDInteractiveStrategy.m */,
+				5C89A49A1F28621F00732EE6 /* MDModeStrategy.h */,
+				5C89A49B1F28621F00732EE6 /* MDModeStrategy.m */,
+				5C89A49C1F28621F00732EE6 /* MDObject3DHelper.h */,
+				5C89A49D1F28621F00732EE6 /* MDObject3DHelper.m */,
+				5C89A49E1F28621F00732EE6 /* MDPlane.m */,
+				5C89A49F1F28621F00732EE6 /* MDPlaneScaleCalculator.h */,
+				5C89A4A01F28621F00732EE6 /* MDPlaneScaleCalculator.m */,
+				5C89A4A11F28621F00732EE6 /* MDProjectionStrategy.h */,
+				5C89A4A21F28621F00732EE6 /* MDProjectionStrategy.m */,
+				5C89A4A31F28621F00732EE6 /* MDRGBABitmapTexture.m */,
+				5C89A4A41F28621F00732EE6 /* MDRGBAProgram.m */,
+				5C89A4A51F28621F00732EE6 /* MDRGBAVideoTexture.m */,
+				5C89A4A61F28621F00732EE6 /* MDSphere3D.m */,
+				5C89A4A71F28621F00732EE6 /* MDStereoSphere3D.m */,
+				5C89A4A81F28621F00732EE6 /* MDTouchHelper.h */,
+				5C89A4A91F28621F00732EE6 /* MDTouchHelper.m */,
+				5C89A4AA1F28621F00732EE6 /* MDVideoDataAdapter.h */,
+				5C89A4AB1F28621F00732EE6 /* MDVideoDataAdatperAVPlayerImpl.h */,
+				5C89A4AC1F28621F00732EE6 /* MDVideoDataAdatperAVPlayerImpl.m */,
+				5C89A4AD1F28621F00732EE6 /* MDVideoFrameAdapter.m */,
+				5C89A4AE1F28621F00732EE6 /* MDVRHeader.h */,
+				5C89A4AF1F28621F00732EE6 /* MDVRLibrary.h */,
+				5C89A4B01F28621F00732EE6 /* MDVRLibrary.m */,
+				5C89A4B11F28621F00732EE6 /* MDYUV420PProgram.m */,
+				5C89A4B21F28621F00732EE6 /* MDYUV420PVideoTexture.m */,
+				5C89A4B31F28621F00732EE6 /* vrlibraw.bundle */,
+			);
+			path = MDVRLibrary;
+			sourceTree = "<group>";
+		};
 		5CC5011A1F25BD8F00A2E06E /* VR_Preview */ = {
 			isa = PBXGroup;
 			children = (
@@ -485,6 +617,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C89A4CF1F28621F00732EE6 /* vrlibraw.bundle in Resources */,
 				5C1B22951F1F4BB700FACE64 /* LaunchScreen.storyboard in Resources */,
 				5C1B22D91F204F5200FACE64 /* Gallery.storyboard in Resources */,
 				5C1B22921F1F4BB700FACE64 /* Assets.xcassets in Resources */,
@@ -546,17 +679,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C89A4CD1F28621F00732EE6 /* MDYUV420PProgram.m in Sources */,
 				5C1B23121F207CF900FACE64 /* AlbumViewController.m in Sources */,
 				5C1B23001F205E3500FACE64 /* MomentDataSource.m in Sources */,
+				5C89A4BF1F28621F00732EE6 /* MDModeStrategy.m in Sources */,
 				5C1B22EE1F2059FC00FACE64 /* PHSourceManager.m in Sources */,
 				5C1B23201F20C2E000FACE64 /* AlbumPhotoController.m in Sources */,
 				5C1B22E81F20576E00FACE64 /* BaseViewController.m in Sources */,
+				5C89A4C41F28621F00732EE6 /* MDRGBABitmapTexture.m in Sources */,
 				5C1B22FA1F205A8A00FACE64 /* VRAlbumModel.m in Sources */,
 				5C5F289A1F219844008A92EA /* AlbumPhotoCell.m in Sources */,
 				5C1B22A41F204AC000FACE64 /* UIColor+Addition.m in Sources */,
+				5C89A4B51F28621F00732EE6 /* MD360Director.m in Sources */,
 				5C1B22F11F205A4E00FACE64 /* MomentModel.m in Sources */,
 				5C1B22C41F204B1F00FACE64 /* MWGridCell.m in Sources */,
 				5C1B22DC1F204FF400FACE64 /* MomentFlowLayout.m in Sources */,
+				5C89A4BB1F28621F00732EE6 /* MDDome3D.m in Sources */,
 				5CC501221F25C9F400A2E06E /* ToolBar.m in Sources */,
 				5C1B22C91F204B1F00FACE64 /* MWTapDetectingView.m in Sources */,
 				5C1B22C51F204B1F00FACE64 /* MWGridViewController.m in Sources */,
@@ -564,22 +702,44 @@
 				5C1B22C71F204B1F00FACE64 /* MWPhotoBrowser.m in Sources */,
 				5C1B22E21F2052F500FACE64 /* MomentCell.m in Sources */,
 				5C1B22C81F204B1F00FACE64 /* MWTapDetectingImageView.m in Sources */,
+				5C89A4C91F28621F00732EE6 /* MDTouchHelper.m in Sources */,
+				5C89A4C11F28621F00732EE6 /* MDPlane.m in Sources */,
 				5C1B230C1F207CC400FACE64 /* ContainerViewController.m in Sources */,
 				5C1B22FD1F205D5C00FACE64 /* BaseDataSource.m in Sources */,
+				5C89A4C31F28621F00732EE6 /* MDProjectionStrategy.m in Sources */,
 				5C1B22C11F204B1F00FACE64 /* DACircularProgressView.m in Sources */,
 				5C1B22871F1F4BB700FACE64 /* main.m in Sources */,
 				5C1B22CA1F204B1F00FACE64 /* MWZoomingScrollView.m in Sources */,
+				5C89A4C01F28621F00732EE6 /* MDObject3DHelper.m in Sources */,
+				5C89A4BD1F28621F00732EE6 /* MDIJKAdapter.m in Sources */,
 				5C1B22E51F20552800FACE64 /* AlbumCell.m in Sources */,
+				5C89A4C71F28621F00732EE6 /* MDSphere3D.m in Sources */,
+				5C89A4CE1F28621F00732EE6 /* MDYUV420PVideoTexture.m in Sources */,
+				5C89A4C61F28621F00732EE6 /* MDRGBAVideoTexture.m in Sources */,
+				5C89A4CA1F28621F00732EE6 /* MDVideoDataAdatperAVPlayerImpl.m in Sources */,
+				5C89A4CC1F28621F00732EE6 /* MDVRLibrary.m in Sources */,
 				5C1B22CB1F204B1F00FACE64 /* UIImage+MWPhotoBrowser.m in Sources */,
 				5C1B22F71F205A7900FACE64 /* AlbumModel.m in Sources */,
+				5C89A4B61F28621F00732EE6 /* MD360Program.m in Sources */,
 				5C1B22C31F204B1F00FACE64 /* MWCaptionView.m in Sources */,
+				5C89A4B81F28621F00732EE6 /* MD360Texture.m in Sources */,
+				5C89A4BC1F28621F00732EE6 /* MDGLKViewController.m in Sources */,
 				5C1B229F1F1F4C0B00FACE64 /* AppDelegate.m in Sources */,
 				5C1B22EB1F2059CE00FACE64 /* ImageDataAPI.m in Sources */,
+				5C89A4B41F28621F00732EE6 /* GLUtil.m in Sources */,
+				5C89A4C81F28621F00732EE6 /* MDStereoSphere3D.m in Sources */,
 				5C5F289D1F21E0DB008A92EA /* CustomButton.m in Sources */,
 				5C1B23031F205EFD00FACE64 /* AlbumDataSource.m in Sources */,
 				5C1B23171F2097C500FACE64 /* SelectFooterView.m in Sources */,
+				5C89A4B71F28621F00732EE6 /* MD360Renderer.m in Sources */,
 				5C1B22C61F204B1F00FACE64 /* MWPhoto.m in Sources */,
+				5C89A4C21F28621F00732EE6 /* MDPlaneScaleCalculator.m in Sources */,
+				5C89A4C51F28621F00732EE6 /* MDRGBAProgram.m in Sources */,
 				5C1B22C21F204B1F00FACE64 /* DALabeledCircularProgressView.m in Sources */,
+				5C89A4CB1F28621F00732EE6 /* MDVideoFrameAdapter.m in Sources */,
+				5C89A4BE1F28621F00732EE6 /* MDInteractiveStrategy.m in Sources */,
+				5C89A4BA1F28621F00732EE6 /* MDDisplayStrategy.m in Sources */,
+				5C89A4B91F28621F00732EE6 /* MDAbsObject3D.m in Sources */,
 				5C1B230F1F207CEF00FACE64 /* MomentViewController.m in Sources */,
 				5C1B23061F20627900FACE64 /* GalleryViewController.m in Sources */,
 				5C1B22DF1F2051A400FACE64 /* EmptySegue.m in Sources */,

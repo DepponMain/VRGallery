@@ -242,8 +242,10 @@
         } completionHandler:^(BOOL success, NSError * _Nullable error) {
             if (success) {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [self.selectedDict removeAllObjects]; [self.selectAssetDict removeAllObjects]; [self loadMomentElements];
                     [[NSNotificationCenter defaultCenter] postNotificationName:@"momentImageDeleteNotification" object:nil];
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        [self.selectedDict removeAllObjects]; [self.selectAssetDict removeAllObjects]; [self loadMomentElements];
+                    });
                 });
             }
         }];

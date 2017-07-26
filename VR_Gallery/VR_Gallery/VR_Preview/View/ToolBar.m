@@ -26,7 +26,7 @@
     [lastBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.offset(0);
         make.centerY.equalTo(self);
-        make.height.offset(32);
+        make.height.offset(ToolbarHeight);
         make.width.offset(60);
     }];
     
@@ -37,7 +37,7 @@
     [nextBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(lastBtn.mas_right);
         make.centerY.equalTo(self);
-        make.height.offset(32);
+        make.height.offset(ToolbarHeight);
         make.width.offset(60);
     }];
     
@@ -48,8 +48,8 @@
     [VRBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.offset(0);
         make.centerY.equalTo(self);
-        make.height.offset(32);
-        make.width.offset(60);
+        make.height.offset(ToolbarHeight);
+        make.width.offset(90);
     }];
 }
 

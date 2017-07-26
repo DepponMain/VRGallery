@@ -1,1 +1,0 @@
-../../../MD360Player4iOS/MDVRLibrary/MDVRLibrary/MDObject3DHelper.h

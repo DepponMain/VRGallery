@@ -114,7 +114,7 @@
         }
         
         if (!group.year && !group.day && !group.month) {
-            resultString = NSLocalizedString(@"今天", nil);
+            resultString = NSLocalizedString(@"未知", nil);
         }
         
         [label setText:resultString]; [view addSubview:label];

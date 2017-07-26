@@ -12,6 +12,7 @@
 #import "MWPhoto.h"
 #import "ToolBar.h"
 #import <CoreMotion/CoreMotion.h>
+#import "ImageDataAPI.h"
 
 @interface VRPreviewController ()<IMDImageProvider, UIGestureRecognizerDelegate>{
     BOOL canRotate;
@@ -156,13 +157,47 @@
 
 #pragma mark -- Action
 - (void)lastButtonClick{
-    
+    if (_currentPage > 0) {
+        [self changeVRImageWith:--_currentPage];
+    }else{
+        
+    }
 }
 - (void)nextButtonClick{
-    
+    if (_currentPage < self.dataSource.count-1) {
+        [self changeVRImageWith:++_currentPage];
+    }else{
+        
+    }
 }
 - (void)glassButtonClick{
     
+}
+
+#pragma mark -- change image
+- (void)changeVRImageWith:(NSInteger)index{
+    MWPhoto *photo = self.dataSource[index];
+    PHAsset *asset = photo.asset;
+    PHAssetResource *resource = [[PHAssetResource assetResourcesForAsset:asset] firstObject];
+    self.titleLabel.text = [resource.originalFilename stringByDeletingPathExtension];
+    
+    [[ImageDataAPI sharedInstance] getImageForPhotoObj:asset withSize:CGSizeMake(asset.pixelWidth, asset.pixelHeight) completion:^(BOOL ret, UIImage *image) {
+        if (ret) {
+            [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"changeVr" object:[self imageWithOriginImage:image]]];
+        }
+    }];
+}
+
+#pragma amrk - change image size
+- (UIImage*)imageWithOriginImage:(UIImage*)image{
+    if (image.size.width <= 4000) {
+        return image;
+    }
+    UIGraphicsBeginImageContext(CGSizeMake(4000, 2000));
+    [image drawInRect:CGRectMake(0, 0, 4000, 2000)];
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
 }
 
 #pragma mark -- UI
@@ -176,7 +211,7 @@
     self.navigationItem.titleView = titleLabel;
     self.navigationItem.titleView.frame = CGRectMake(0, 0, 200, 32);
     
-    ToolBar *toolBar = [[ToolBar alloc] initWithFrame:CGRectMake(0, ScreenHeight - ToolbarHeight, ScreenWidth, ToolbarHeight)];
+    ToolBar *toolBar = [[ToolBar alloc] init];
     self.toolBar = toolBar;
     toolBar.last = ^{
         [self lastButtonClick];
@@ -188,10 +223,18 @@
         [self glassButtonClick];
     };
     [self.view addSubview:toolBar];
-    
-    
+    [toolBar mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.bottom.right.equalTo(self.view);
+        make.height.offset(ToolbarHeight);
+    }];
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+    return YES;
+}
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

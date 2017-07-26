@@ -165,7 +165,7 @@
     return dict;
 }
 
-#pragma mark - MWPhotoBrowserDelegate
+#pragma mark - MWPhoto Browser Delegate
 - (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser {
     return _photos.count;
 }
@@ -204,20 +204,19 @@
     return _selectFooter;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
     return YES;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([segue.identifier isEqualToString:@"embedContainer"])
-    {
+    if ([segue.identifier isEqualToString:@"embedContainer"]){
         self.containerViewController = segue.destinationViewController;
     }
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 @end

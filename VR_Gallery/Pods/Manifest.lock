@@ -1,7 +1,6 @@
 PODS:
   - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
-  - MD360Player4iOS (1.1.0)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
@@ -9,15 +8,13 @@ PODS:
 DEPENDENCIES:
   - Masonry
   - MBProgressHUD
-  - MD360Player4iOS
   - SDWebImage (~> 3.8)
 
 SPEC CHECKSUMS:
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  MD360Player4iOS: fea71731884df9b6253156265c8787ac10acae68
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
 
-PODFILE CHECKSUM: e127ba176f6019ec609b9fffe0b6d514a447aec3
+PODFILE CHECKSUM: 2c6eeb5d471427213f3eb3f67a82c57e63b5ad81
 
 COCOAPODS: 1.1.1

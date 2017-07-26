@@ -14,6 +14,7 @@
 #import "UIImage+MWPhotoBrowser.h"
 #import "CustomButton.h"
 #import "VRPreviewController.h"
+#import "ImageDataAPI.h"
 
 #define PADDING                  10
 
@@ -1372,24 +1373,36 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
     VRPreviewController *previewVR = [[VRPreviewController alloc]init];
     
     MWPhoto *photo = _photos[_currentPageIndex];
-    __block UIImage *image;
+    __block UIImage *result;
     PHAsset *asset = photo.asset;
     
-    PHImageManager *manager = [[PHImageManager alloc]init];
-    PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
-    [options setSynchronous:YES]; // called exactly once
-    [manager requestImageForAsset:asset targetSize:CGSizeMake(2000, 1000) contentMode:PHImageContentModeAspectFit options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
-        image = result;
+    [[ImageDataAPI sharedInstance] getImageForPhotoObj:asset withSize:CGSizeMake(asset.pixelWidth, asset.pixelHeight) completion:^(BOOL ret, UIImage *image) {
+        if (ret) {
+            result = [self imageWithOriginImage:image];
+        }
     }];
+    
     PHAssetResource *resource = [[PHAssetResource assetResourcesForAsset:asset] firstObject];
     previewVR.imageName = [resource.originalFilename stringByDeletingPathExtension];
-    previewVR.image = image;
+    previewVR.image = result;
     previewVR.dataSource = [NSMutableArray arrayWithArray:self.dataSource];
     previewVR.currentPage = (NSInteger)_currentPageIndex;
     [self.navigationController pushViewController:previewVR animated:YES];
 }
-#pragma mark - Grid
 
+#pragma amrk - change image size
+- (UIImage*)imageWithOriginImage:(UIImage*)image{
+    if (image.size.width <= 4000) {
+        return image;
+    }
+    UIGraphicsBeginImageContext(CGSizeMake(4000, 2000));
+    [image drawInRect:CGRectMake(0, 0, 4000, 2000)];
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+
+#pragma mark - Grid
 - (void)showGridAnimated {
     [self showGrid:YES];
 }
