@@ -23,8 +23,10 @@
 @property (nonatomic, strong) NSMutableArray *D_valueArray;
 @property (nonatomic, assign) BOOL isHideBar;
 @property (nonatomic, assign) BOOL isGlass;
+@property (nonatomic, assign) BOOL canAction;
 @property (nonatomic, weak) ToolBar *toolBar;
 @property (nonatomic, weak) UILabel *titleLabel;
+@property (nonatomic, weak) UIView *blackView;
 
 @end
 
@@ -33,7 +35,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.isHideBar = NO; self.isGlass = NO; kAppDelegate.allowRotation = 3; [self crateUI];
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.isHideBar = NO; self.isGlass = NO; self.canAction = YES; kAppDelegate.allowRotation = 3; [self crateUI];
     
     // TapGesture
     UITapGestureRecognizer * privateLetterTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAvatarView:)];
@@ -62,23 +65,19 @@
     [config asImage:self];
     [config setContainer:self view:self.view];
     [config pinchEnabled:true];
-    
     self.vrLibrary = [config build];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
     kAppDelegate.allowRotation = 2;
-    NSString *newPage = [NSString stringWithFormat:@"%ld",(long)_currentPage];
-    NSNotification *notification = [NSNotification notificationWithName:@"back" object:newPage];
-    [[NSNotificationCenter defaultCenter]postNotification:notification];
+    [[NSNotificationCenter defaultCenter]postNotification:[NSNotification notificationWithName:@"back" object:[NSString stringWithFormat:@"%ld",(long)_currentPage]]];
     
     [self.toolBar removeFromSuperview];
-    self.navigationController.navigationBar.hidden = NO;
     self.vrLibrary = nil;
     [_motionManager stopDeviceMotionUpdates];
     [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
 }
 
 #pragma mark -- Delegate
@@ -90,6 +89,11 @@
 
 #pragma mark -- tap gesture
 - (void)tapAvatarView: (UITapGestureRecognizer *)gesture{
+    [UIView animateWithDuration:0.3 animations:^{
+        self.navigationController.navigationBar.alpha = _isHideBar;
+        self.toolBar.alpha = _isHideBar;
+    }];
+    _isHideBar = !_isHideBar;
 }
 
 #pragma mark -- Determine whether locked the screen
@@ -127,14 +131,14 @@
     double z = deviceMotion.gravity.z;
     
     double d_value = fabs(x) - fabs(y);
-    if (_D_valueArray.count < 5) {
+    if (_D_valueArray.count < 6) {
         [self.D_valueArray addObject:[NSNumber numberWithDouble:d_value]];
         return;
-    }else if(_D_valueArray.count == 5){
+    }else if(_D_valueArray.count == 6){
         [self.D_valueArray removeObjectAtIndex:0];
         [self.D_valueArray addObject:[NSNumber numberWithDouble:d_value]];
     }
-    if ([_D_valueArray[0] doubleValue] > 0.5 && [_D_valueArray[1] doubleValue] > 0.5 && [_D_valueArray[2] doubleValue] > 0.5 && [_D_valueArray[3] doubleValue] > 0.5 && [_D_valueArray[4] doubleValue] > 0.5) {
+    if ([_D_valueArray[0] doubleValue] > 0.5 && [_D_valueArray[1] doubleValue] > 0.5 && [_D_valueArray[2] doubleValue] > 0.5 && [_D_valueArray[3] doubleValue] > 0.5 && [_D_valueArray[4] doubleValue] > 0.5 && [_D_valueArray[5] doubleValue] > 0.5) {
         if (isFirstLoad) {
             return;
         }
@@ -164,14 +168,32 @@
     }
 }
 - (void)nextButtonClick{
-    if (_currentPage < self.dataSource.count-1) {
+    if (_currentPage < self.dataSource.count - 1) {
         [self changeVRImageWith:++_currentPage];
     }else{
         
     }
 }
 - (void)glassButtonClick{
-    
+    if (self.isGlass) {
+        kAppDelegate.allowRotation = 3;
+        [self.vrLibrary switchInteractiveMode:MDModeInteractiveTouch];
+        [self.vrLibrary switchDisplayMode:MDModeDisplayNormal];
+    }else{
+        if ([[UIDevice currentDevice] respondsToSelector:@selector(setOrientation:)]) {
+            SEL selector = NSSelectorFromString(@"setOrientation:");
+            NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDevice instanceMethodSignatureForSelector:selector]];
+            [invocation setSelector:selector];
+            [invocation setTarget:[UIDevice currentDevice]];
+            int val = UIInterfaceOrientationLandscapeRight;
+            [invocation setArgument:&val atIndex:2];
+            [invocation invoke];
+        }
+        kAppDelegate.allowRotation = 4;
+        [self.vrLibrary switchInteractiveMode:MDModeInteractiveMotionWithTouch];
+        [self.vrLibrary switchDisplayMode:MDModeDisplayGlass];
+    }
+    self.isGlass = !self.isGlass;
 }
 
 #pragma mark -- change image
@@ -227,6 +249,15 @@
         make.left.bottom.right.equalTo(self.view);
         make.height.offset(ToolbarHeight);
     }];
+}
+- (UIView *)blackView{
+    if (!_blackView) {
+        UIView *black = [[UIView alloc] initWithFrame:self.view.frame];
+        _blackView = black;
+        _blackView.backgroundColor = [UIColor blackColor];
+        [self.view addSubview:_blackView];
+    }
+    return _blackView;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
