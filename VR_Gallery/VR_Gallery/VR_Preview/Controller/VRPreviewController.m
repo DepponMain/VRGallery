@@ -68,9 +68,9 @@
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    kAppDelegate.allowRotation = 2;
     [[NSNotificationCenter defaultCenter]postNotification:[NSNotification notificationWithName:@"back" object:[NSString stringWithFormat:@"%ld",(long)_currentPage]]];
     
+    kAppDelegate.allowRotation = 2;
     [self.toolBar removeFromSuperview];
     self.vrLibrary = nil;
     [_motionManager stopDeviceMotionUpdates];
@@ -92,8 +92,8 @@
 #pragma mark -- tap gesture
 - (void)tapAvatarView: (UITapGestureRecognizer *)gesture{
     [UIView animateWithDuration:0.3 animations:^{
-        self.navigationController.navigationBar.alpha = _isHideBar;
-        self.toolBar.alpha = _isHideBar;
+        self.navigationController.navigationBar.alpha = _isHideBar; self.navigationController.navigationBar.hidden = !_isHideBar;
+        self.toolBar.alpha = _isHideBar; self.toolBar.hidden = !_isHideBar;
     }];
     _isHideBar = !_isHideBar;
 }
@@ -103,12 +103,10 @@
     UIDevice *device = [UIDevice currentDevice];
     switch (device.orientation) {
         case UIDeviceOrientationLandscapeLeft:
-            [_motionManager stopDeviceMotionUpdates];
-            canRotate = YES;
+            [_motionManager stopDeviceMotionUpdates]; canRotate = YES;
             break;
         case UIDeviceOrientationLandscapeRight:
-            [_motionManager stopDeviceMotionUpdates];
-            canRotate = YES;
+            [_motionManager stopDeviceMotionUpdates]; canRotate = YES;
             break;
         default:
             break;
@@ -191,6 +189,7 @@
             [invocation setArgument:&val atIndex:2];
             [invocation invoke];
         }
+        self.isHideBar = NO; [self tapAvatarView:nil];
         kAppDelegate.allowRotation = 4;
         [self.vrLibrary switchInteractiveMode:MDModeInteractiveMotionWithTouch];
         [self.vrLibrary switchDisplayMode:MDModeDisplayGlass];
@@ -255,13 +254,6 @@
         make.left.bottom.right.equalTo(self.view);
         make.height.offset(ToolbarHeight);
     }];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
-    return YES;
-}
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskAll;
 }
 
 - (void)didReceiveMemoryWarning {
