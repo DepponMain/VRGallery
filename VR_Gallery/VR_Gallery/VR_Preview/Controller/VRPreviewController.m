@@ -23,10 +23,8 @@
 @property (nonatomic, strong) NSMutableArray *D_valueArray;
 @property (nonatomic, assign) BOOL isHideBar;
 @property (nonatomic, assign) BOOL isGlass;
-@property (nonatomic, assign) BOOL canAction;
 @property (nonatomic, weak) ToolBar *toolBar;
 @property (nonatomic, weak) UILabel *titleLabel;
-@property (nonatomic, weak) UIView *blackView;
 
 @end
 
@@ -36,7 +34,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    self.isHideBar = NO; self.isGlass = NO; self.canAction = YES; kAppDelegate.allowRotation = 3; [self crateUI];
+    self.isHideBar = NO; self.isGlass = NO; kAppDelegate.allowRotation = 3; [self crateUI];
     
     // TapGesture
     UITapGestureRecognizer * privateLetterTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAvatarView:)];
@@ -78,6 +76,10 @@
     [_motionManager stopDeviceMotionUpdates];
     [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+}
+
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark -- Delegate
@@ -164,14 +166,14 @@
     if (_currentPage > 0) {
         [self changeVRImageWith:--_currentPage];
     }else{
-        
+        [MBProgressText showHUDWithText:@"这已经是第一张了" inView:self.view hideAfterDelay:0.5];
     }
 }
 - (void)nextButtonClick{
     if (_currentPage < self.dataSource.count - 1) {
         [self changeVRImageWith:++_currentPage];
     }else{
-        
+        [MBProgressText showHUDWithText:@"这已经是最后一张了" inView:self.view hideAfterDelay:0.5];
     }
 }
 - (void)glassButtonClick{
@@ -205,21 +207,25 @@
     
     [[ImageDataAPI sharedInstance] getImageForPhotoObj:asset withSize:CGSizeMake(asset.pixelWidth, asset.pixelHeight) completion:^(BOOL ret, UIImage *image) {
         if (ret) {
-            [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"changeVr" object:[self imageWithOriginImage:image]]];
+            [self imageWithOriginImage:image completion:^(BOOL done, UIImage *resultImage) {
+                if (done) {
+                    [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"changeVr" object:resultImage]];
+                }
+            }];
         }
     }];
 }
 
 #pragma amrk - change image size
-- (UIImage*)imageWithOriginImage:(UIImage*)image{
+- (void)imageWithOriginImage:(UIImage*)image completion:(void (^)(BOOL done, UIImage *resultImage))completion{
     if (image.size.width <= 4000) {
-        return image;
+        completion(YES, image);
     }
     UIGraphicsBeginImageContext(CGSizeMake(4000, 2000));
     [image drawInRect:CGRectMake(0, 0, 4000, 2000)];
     UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    return newImage;
+    completion(YES, newImage);
 }
 
 #pragma mark -- UI
@@ -249,15 +255,6 @@
         make.left.bottom.right.equalTo(self.view);
         make.height.offset(ToolbarHeight);
     }];
-}
-- (UIView *)blackView{
-    if (!_blackView) {
-        UIView *black = [[UIView alloc] initWithFrame:self.view.frame];
-        _blackView = black;
-        _blackView.backgroundColor = [UIColor blackColor];
-        [self.view addSubview:_blackView];
-    }
-    return _blackView;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {

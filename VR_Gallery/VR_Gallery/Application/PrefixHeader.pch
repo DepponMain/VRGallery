@@ -17,6 +17,7 @@
 #import "AppDelegate.h"
 #import "Masonry.h"
 #import "UIColor+Addition.h"
+#import "MBProgressText.h"
 
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width
 #define ScreenHeight [UIScreen mainScreen].bounds.size.height

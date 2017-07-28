@@ -233,8 +233,7 @@
 - (void)deleteBtnClick{
     NSArray *selectArr = [self.selectAssetDict allValues];
     if (selectArr.count < 1) {
-//        MBProgressHUD *hud=[(AppDelegate *)[UIApplication sharedApplication].delegate responseWithString:@"没有可删除的选项"];
-//        [hud hide:YES afterDelay:0.5];
+        [MBProgressText showHUDWithText:@"请至少选择一张" inView:self.view hideAfterDelay:0.5];
         return;
     }else{
         [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{

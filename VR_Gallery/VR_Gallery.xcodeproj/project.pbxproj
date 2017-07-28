@@ -45,6 +45,7 @@
 		5C1B23121F207CF900FACE64 /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B23111F207CF900FACE64 /* AlbumViewController.m */; };
 		5C1B23171F2097C500FACE64 /* SelectFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B23161F2097C500FACE64 /* SelectFooterView.m */; };
 		5C1B23201F20C2E000FACE64 /* AlbumPhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1B231F1F20C2E000FACE64 /* AlbumPhotoController.m */; };
+		5C2D5CB91F2AEB1300DF1871 /* MBProgressText.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2D5CB81F2AEB1300DF1871 /* MBProgressText.m */; };
 		5C5F289A1F219844008A92EA /* AlbumPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F28991F219844008A92EA /* AlbumPhotoCell.m */; };
 		5C5F289D1F21E0DB008A92EA /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C5F289C1F21E0DB008A92EA /* CustomButton.m */; };
 		5C89A4B41F28621F00732EE6 /* GLUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C89A4851F28621F00732EE6 /* GLUtil.m */; };
@@ -157,6 +158,8 @@
 		5C1B23161F2097C500FACE64 /* SelectFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectFooterView.m; sourceTree = "<group>"; };
 		5C1B231E1F20C2E000FACE64 /* AlbumPhotoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumPhotoController.h; sourceTree = "<group>"; };
 		5C1B231F1F20C2E000FACE64 /* AlbumPhotoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumPhotoController.m; sourceTree = "<group>"; };
+		5C2D5CB71F2AEB1300DF1871 /* MBProgressText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressText.h; sourceTree = "<group>"; };
+		5C2D5CB81F2AEB1300DF1871 /* MBProgressText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressText.m; sourceTree = "<group>"; };
 		5C5F28981F219844008A92EA /* AlbumPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumPhotoCell.h; sourceTree = "<group>"; };
 		5C5F28991F219844008A92EA /* AlbumPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumPhotoCell.m; sourceTree = "<group>"; };
 		5C5F289B1F21E0DB008A92EA /* CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
@@ -252,6 +255,7 @@
 			children = (
 				5C1B229C1F1F4C0B00FACE64 /* Application */,
 				5C1B22A11F204AB000FACE64 /* Extension */,
+				5C2D5CB61F2AEAB800DF1871 /* Tool */,
 				5C1B22CC1F204D0D00FACE64 /* Gallery */,
 				5CC5011A1F25BD8F00A2E06E /* VR_Preview */,
 				5C1B22A51F204B1600FACE64 /* Vendor */,
@@ -453,6 +457,15 @@
 				5C1B23161F2097C500FACE64 /* SelectFooterView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5C2D5CB61F2AEAB800DF1871 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				5C2D5CB71F2AEB1300DF1871 /* MBProgressText.h */,
+				5C2D5CB81F2AEB1300DF1871 /* MBProgressText.m */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 		5C89A4831F28621F00732EE6 /* MDVRLibrary */ = {
@@ -689,6 +702,7 @@
 				5C89A4C41F28621F00732EE6 /* MDRGBABitmapTexture.m in Sources */,
 				5C1B22FA1F205A8A00FACE64 /* VRAlbumModel.m in Sources */,
 				5C5F289A1F219844008A92EA /* AlbumPhotoCell.m in Sources */,
+				5C2D5CB91F2AEB1300DF1871 /* MBProgressText.m in Sources */,
 				5C1B22A41F204AC000FACE64 /* UIColor+Addition.m in Sources */,
 				5C89A4B51F28621F00732EE6 /* MD360Director.m in Sources */,
 				5C1B22F11F205A4E00FACE64 /* MomentModel.m in Sources */,
