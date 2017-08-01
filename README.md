@@ -36,21 +36,22 @@ VR图片所在相薄（真机和模拟器显示会略有不同）
 
 ### Browser
 图片的平面浏览，点击任意一张图片即可跳转到此页面。  
-图片浏览器是对[MWPhotoBrowser][id]做的修改
+图片浏览器是对 [MWPhotoBrowser][id] 做的修改
+
 [id]: https://github.com/mwaterfall/MWPhotoBrowser
 
 ![](https://github.com/DepponMain/VRGallery/raw/master/ScreenShot/Browser.png)
 
 ### VR_browser （VR浏览的几种模式）
-#### 竖屏非VR眼睛模式：
+#### 竖屏非VR眼镜模式：
 
 ![](https://github.com/DepponMain/VRGallery/raw/master/ScreenShot/VR_simple_browser_vertial.png)
 
-#### 横屏非VR眼睛模式：
+#### 横屏非VR眼镜模式：
 
 ![](https://github.com/DepponMain/VRGallery/raw/master/ScreenShot/VR_simple_browser_cross.png)
 
-#### VR眼睛模式：（佩戴VR眼镜效果更好哦！）
+#### VR眼镜模式：（佩戴VR眼镜效果更好哦！）
 
 ![](https://github.com/DepponMain/VRGallery/raw/master/ScreenShot/VR_browser.png)
 
