@@ -171,6 +171,7 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
     [_toolbar setBackgroundImage:nil forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsLandscapePhone];
 //    _toolbar.barStyle = UIBarStyleBlackTranslucent;
     _toolbar.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleWidth;
+    [_toolbar layoutIfNeeded];
     
     // Toolbar Items
     if (self.displayNavArrows) {
@@ -283,6 +284,7 @@ static void * MWVideoPlayerObservation = &MWVideoPlayerObservation;
     }
     
     [self.view addSubview:_toolbar];
+    [_toolbar layoutIfNeeded];
     
 //    // Toolbar visibility
 //    [_toolbar setItems:items];

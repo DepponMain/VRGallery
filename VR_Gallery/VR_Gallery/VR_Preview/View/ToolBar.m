@@ -13,6 +13,7 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
+        [self layoutIfNeeded];
         [self setupUI];
     }
     return self;
